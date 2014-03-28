@@ -1,0 +1,102 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D96EF1DF-9853-03DF-6441-398EA45FAF7F" name="Regioni">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>4EFA8FF6-D662-511C-1C2F-22FE80FF5EEB</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="idRegion" id="1583072C-E337-35F0-9134-7142EA37B859">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>D714F1A9-256E-3DC7-B6DC-81FB4E5AD155</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ime" id="F5CCBA0B-420C-3EE4-F377-5626E7B9846B">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>32A57392-010C-BEA8-EA94-F9DC2477EB37</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Drzava_drzavaKod" id="0AEC75F3-676C-DFD7-8641-51CA284874AC">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>01EA3804-539F-4304-9402-1FBECA9D1AF9</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>2</dataTypeSize>
+<delegate>B499C7D1-5E4A-7A26-2AB2-F1F1463F3213</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="74CDCD7A-9324-9DF0-6642-0B5BB0DA46E6" referredColumn="B499C7D1-5E4A-7A26-2AB2-F1F1463F3213"/>
+</associations>
+</Column>
+<Column name="Regioni_idRegion" id="5B19F36C-9385-2135-B57B-2A6A9E7E0E5C">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>47D4AD1F-D251-C0A0-6765-85BB3F4CFE08</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>1583072C-E337-35F0-9134-7142EA37B859</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5A0EDD45-8DAA-A594-6052-D941A5F83219" referredColumn="1583072C-E337-35F0-9134-7142EA37B859"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5EAAA691-3367-46D8-22A1-228950DBB9E2" name="Regioni_PK">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>BF1EAC56-D863-A2ED-A436-279637674CD5</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1583072C-E337-35F0-9134-7142EA37B859"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FA918E9F-9A27-B17A-22E0-93E68C2B7CF3" name="Regioni_Drzava_FK">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>CF35C7F8-9AA7-3B77-27C2-CA6A14DEA6A0</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0AEC75F3-676C-DFD7-8641-51CA284874AC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E6D32525-64E8-2FB2-3D5A-61E10C534FA3" name="Regioni_Regioni_FK">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>2D23A097-A73F-FFAB-C32A-3A4BE281DD5E</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5B19F36C-9385-2135-B57B-2A6A9E7E0E5C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

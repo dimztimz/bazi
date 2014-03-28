@@ -1,0 +1,97 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7194B366-4C38-A5E7-4B81-8F374DE8827B" name="Vidovi">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>5BA62CF2-E7BC-4D87-207A-827B98DD29AE</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="idVid" id="52C8A27A-4B56-AC1F-4E3F-71D2221A0BD1">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>62FFDFC2-E157-CA72-D908-7780F7BFD77C</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="latinsko_ime" id="78DDAADC-2A43-1BF5-2D83-DEA95FF8201F">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>1B2134D7-564E-2BFD-9E4C-2B4C3B1E13C2</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ime" id="4EEF779F-3D48-DE25-A373-27ED19BF679B">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>282EB056-39A1-7116-6689-9C2306035397</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Vidovi_idVid" id="0BD09DD7-1F80-469C-0F77-159874D3583E">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>57EE64C1-C9EF-A4D9-C1DD-6037B292977F</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>52C8A27A-4B56-AC1F-4E3F-71D2221A0BD1</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5B18C7EA-D77B-71F3-3881-3CC9766DBFC3" referredColumn="52C8A27A-4B56-AC1F-4E3F-71D2221A0BD1"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3BB9CC48-31E1-61F1-A8FE-36C14C66C14D" name="Vidovi_PK">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>32EA1E25-C8FC-100C-DF01-5B06C1B631A5</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="52C8A27A-4B56-AC1F-4E3F-71D2221A0BD1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A123EEFE-0EAB-8B28-D96D-A3A9B44F1A7F" name="Vidovi__UN">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>9C311E36-608A-1FDB-9AC6-D79E34B4BB66</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="78DDAADC-2A43-1BF5-2D83-DEA95FF8201F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3C27026F-54DB-3D9C-9655-C8ECC37DC8C7" name="Vidovi_Vidovi_FK">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>851A9F69-DC1C-F785-9526-33A784908EBC</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0BD09DD7-1F80-469C-0F77-159874D3583E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

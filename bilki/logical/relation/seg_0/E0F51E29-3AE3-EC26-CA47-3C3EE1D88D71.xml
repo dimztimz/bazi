@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Vidovi_vo_regioni" directorySegmentName="seg_0" id="E0F51E29-3AE3-EC26-CA47-3C3EE1D88D71">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 17:05:56 UTC</createdTime>
+<ownerDesignName>bilki</ownerDesignName>
+<engineerTo>
+<item key="7F2290F8-3C3F-6DE7-9F31-4137567E4904" value="true"/>
+</engineerTo>
+<sourcePk>BF1EAC56-D863-A2ED-A436-279637674CD5</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>4EFA8FF6-D662-511C-1C2F-22FE80FF5EEB</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>5BA62CF2-E7BC-4D87-207A-827B98DD29AE</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,70 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BA2A6AC3-B135-14C3-E01A-69FE514CCE67" name="Bolesti">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>BA7192E7-5BA3-64B2-0297-CC068A6CB2FF</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="idBolest" id="ACE65322-C070-6B63-077F-679E8D5BCD85">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>44EA85D4-0D15-3C18-2D44-B56D3381C05F</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ime" id="147CA243-EF32-D817-0410-4B5BE87C3538">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>66E911C1-6582-6585-2DC1-BDA0D1A65F1A</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="opis" id="DC947CB1-6064-705F-CDE7-36F15A82DBA8">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>E1E535E0-E956-F183-B036-7CB3FCB35043</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="91EBC763-E8BB-6285-CBF5-38F2A4A896E2" name="Bolesti_PK">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>B678BF97-811A-DC67-0AFF-CEC0BD8E9F2F</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="ACE65322-C070-6B63-077F-679E8D5BCD85"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8F25578A-6E4F-A263-4B7E-BD373AA9E913" name="Bolesti__UN">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>8982A86B-4911-23F6-96CB-F6F3CD088E23</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="147CA243-EF32-D817-0410-4B5BE87C3538"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

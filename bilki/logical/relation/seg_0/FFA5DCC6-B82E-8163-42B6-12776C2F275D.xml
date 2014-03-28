@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="edinica_merka_vo_recept" directorySegmentName="seg_0" id="FFA5DCC6-B82E-8163-42B6-12776C2F275D">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 16:49:57 UTC</createdTime>
+<ownerDesignName>bilki</ownerDesignName>
+<engineerTo>
+<item key="7F2290F8-3C3F-6DE7-9F31-4137567E4904" value="true"/>
+</engineerTo>
+<sourcePk>A61A8985-B662-4092-E607-E880D9E4B411</sourcePk>
+<targetPk>4516CA23-A8AE-7434-D13D-87861BF8D205</targetPk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>AFB9C5B6-20EE-B1AB-855D-2434ED39278A</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>B759C532-178F-49AE-AB61-25145B66DFD5</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,82 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="BA7192E7-5BA3-64B2-0297-CC068A6CB2FF" name="Bolesti">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 15:56:27 UTC</createdTime>
+<ownerDesignName>bilki</ownerDesignName>
+<engineerTo>
+<item key="7F2290F8-3C3F-6DE7-9F31-4137567E4904" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="idBolest" id="44EA85D4-0D15-3C18-2D44-B56D3381C05F">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 15:56:48 UTC</createdTime>
+<ownerDesignName>bilki</ownerDesignName>
+<engineerTo>
+<item key="7F2290F8-3C3F-6DE7-9F31-4137567E4904" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+</Attribute>
+<Attribute name="ime" id="66E911C1-6582-6585-2DC1-BDA0D1A65F1A">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 16:15:09 UTC</createdTime>
+<ownerDesignName>bilki</ownerDesignName>
+<engineerTo>
+<item key="7F2290F8-3C3F-6DE7-9F31-4137567E4904" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+</Attribute>
+<Attribute name="opis" id="E1E535E0-E956-F183-B036-7CB3FCB35043">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 16:22:58 UTC</createdTime>
+<ownerDesignName>bilki</ownerDesignName>
+<engineerTo>
+<item key="7F2290F8-3C3F-6DE7-9F31-4137567E4904" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="B678BF97-811A-DC67-0AFF-CEC0BD8E9F2F" name="Bolesti PK">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 16:15:08 UTC</createdTime>
+<ownerDesignName>bilki</ownerDesignName>
+<engineerTo>
+<item key="7F2290F8-3C3F-6DE7-9F31-4137567E4904" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>44EA85D4-0D15-3C18-2D44-B56D3381C05F</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="8982A86B-4911-23F6-96CB-F6F3CD088E23" name="Bolesti ime UK">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 16:36:40 UTC</createdTime>
+<ownerDesignName>bilki</ownerDesignName>
+<engineerTo>
+<item key="7F2290F8-3C3F-6DE7-9F31-4137567E4904" value="true"/>
+</engineerTo>
+<newElementsIDs>66E911C1-6582-6585-2DC1-BDA0D1A65F1A</newElementsIDs>
+<usedAttributes>
+<attributeRef>66E911C1-6582-6585-2DC1-BDA0D1A65F1A</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,96 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="5BA62CF2-E7BC-4D87-207A-827B98DD29AE" name="Vidovi">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 14:33:26 UTC</createdTime>
+<ownerDesignName>bilki</ownerDesignName>
+<engineerTo>
+<item key="7F2290F8-3C3F-6DE7-9F31-4137567E4904" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="idVid" id="62FFDFC2-E157-CA72-D908-7780F7BFD77C">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 14:34:12 UTC</createdTime>
+<ownerDesignName>bilki</ownerDesignName>
+<engineerTo>
+<item key="7F2290F8-3C3F-6DE7-9F31-4137567E4904" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+</Attribute>
+<Attribute name="latinsko_ime" id="1B2134D7-564E-2BFD-9E4C-2B4C3B1E13C2">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 14:33:36 UTC</createdTime>
+<ownerDesignName>bilki</ownerDesignName>
+<engineerTo>
+<item key="7F2290F8-3C3F-6DE7-9F31-4137567E4904" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+</Attribute>
+<Attribute name="ime" id="282EB056-39A1-7116-6689-9C2306035397">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 14:34:59 UTC</createdTime>
+<ownerDesignName>bilki</ownerDesignName>
+<engineerTo>
+<item key="7F2290F8-3C3F-6DE7-9F31-4137567E4904" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+</Attribute>
+<Attribute name="idVid1" id="57EE64C1-C9EF-A4D9-C1DD-6037B292977F">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 14:49:01 UTC</createdTime>
+<generatorID>851A9F69-DC1C-F785-9526-33A784908EBC</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<engineerTo>
+<item key="7F2290F8-3C3F-6DE7-9F31-4137567E4904" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>62FFDFC2-E157-CA72-D908-7780F7BFD77C</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="32EA1E25-C8FC-100C-DF01-5B06C1B631A5" name="Vidovi PK">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 14:46:02 UTC</createdTime>
+<ownerDesignName>bilki</ownerDesignName>
+<engineerTo>
+<item key="7F2290F8-3C3F-6DE7-9F31-4137567E4904" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>62FFDFC2-E157-CA72-D908-7780F7BFD77C</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="9C311E36-608A-1FDB-9AC6-D79E34B4BB66" name="Vidovi Lat ime UK">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 14:46:31 UTC</createdTime>
+<ownerDesignName>bilki</ownerDesignName>
+<engineerTo>
+<item key="7F2290F8-3C3F-6DE7-9F31-4137567E4904" value="true"/>
+</engineerTo>
+<newElementsIDs>1B2134D7-564E-2BFD-9E4C-2B4C3B1E13C2</newElementsIDs>
+<usedAttributes>
+<attributeRef>1B2134D7-564E-2BFD-9E4C-2B4C3B1E13C2</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,34 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Proizvod_leci_simptomi" directorySegmentName="seg_0" id="DCDB6517-FDE2-4C33-06BF-C24E57A57859">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 16:57:26 UTC</createdTime>
+<ownerDesignName>bilki</ownerDesignName>
+<engineerTo>
+<item key="7F2290F8-3C3F-6DE7-9F31-4137567E4904" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>C37633B1-FFFB-408E-CD9E-A2DD5FEE7D51</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>4743C007-9338-DF6A-58F8-6C9310DFD0A0</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<attribute name="Attribute_1" id="B16E2D8E-E3A7-99DF-F748-362737234745">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 16:57:36 UTC</createdTime>
+<ownerDesignName>bilki</ownerDesignName>
+<engineerTo>
+<item key="7F2290F8-3C3F-6DE7-9F31-4137567E4904" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>5</dataTypeScale>
+</attribute>
+</attributes>
+</Relation>

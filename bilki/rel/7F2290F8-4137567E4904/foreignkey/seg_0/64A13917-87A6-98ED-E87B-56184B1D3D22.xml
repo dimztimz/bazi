@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="64A13917-87A6-98ED-E87B-56184B1D3D22" name="Ucestvo_recepti_Merki_FK">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>FFA5DCC6-B82E-8163-42B6-12776C2F275D</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<containerWithKeyObject>B5BC34FF-8BD7-EA1F-7B4B-CB6B4705027C</containerWithKeyObject>
+<deleteRule>NO ACTION</deleteRule>
+<localFKIndex>FE9B0A92-69B7-AE21-7F93-A9ABB8BD1926</localFKIndex>
+<keyObject>240BA1BF-6E1A-8526-05D5-5AD7F0BA0030</keyObject>
+<mandatory>true</mandatory>
+<transferable>true</transferable>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

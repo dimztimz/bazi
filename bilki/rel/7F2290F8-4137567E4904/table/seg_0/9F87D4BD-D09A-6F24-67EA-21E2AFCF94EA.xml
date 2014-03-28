@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9F87D4BD-D09A-6F24-67EA-21E2AFCF94EA" name="Vidovi_vo_regioni">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<ownerDesignName>bilki</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Regioni_idRegion" id="8F612BB8-B535-6FC0-15C9-FE1D80D07E74">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<ownerDesignName>bilki</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>1583072C-E337-35F0-9134-7142EA37B859</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FAF86E64-F477-EC28-EBE9-246469981C98" referredColumn="1583072C-E337-35F0-9134-7142EA37B859"/>
+</associations>
+</Column>
+<Column name="Vidovi_idVid" id="0AF2CC0D-4D66-5F59-1302-9BFC76CA0963">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<ownerDesignName>bilki</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>52C8A27A-4B56-AC1F-4E3F-71D2221A0BD1</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="63763B56-D2FB-9769-D8E9-C3677957D046" referredColumn="52C8A27A-4B56-AC1F-4E3F-71D2221A0BD1"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A6434BE0-C88A-37D6-B073-89DB3657BB1F" name="Vidovi_vo_regioni__IDX">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<ownerDesignName>bilki</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8F612BB8-B535-6FC0-15C9-FE1D80D07E74"/>
+<colUsage columnID="0AF2CC0D-4D66-5F59-1302-9BFC76CA0963"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="46EF2E0A-DB27-8A18-EE94-B95950A5008E" name="FK_ASS_13">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>E0F51E29-3AE3-EC26-CA47-3C3EE1D88D71</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8F612BB8-B535-6FC0-15C9-FE1D80D07E74"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="46C606EC-2C3A-89CB-C255-60078712F981" name="FK_ASS_14">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>E0F51E29-3AE3-EC26-CA47-3C3EE1D88D71</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0AF2CC0D-4D66-5F59-1302-9BFC76CA0963"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

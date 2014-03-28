@@ -1,0 +1,120 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B5BC34FF-8BD7-EA1F-7B4B-CB6B4705027C" name="Ucestvo_recepti">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>B759C532-178F-49AE-AB61-25145B66DFD5</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Proizvodi_idProizvod" id="EE9BC95F-7005-729C-8769-56F3BAC80AB3">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>B5B996B5-4DD5-C6F3-0220-81A1CA8946E0</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>CA3AB2DC-B778-AF9E-6F7A-DE251561E052</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E8380B83-01EA-8C8A-2408-17DB80AED722" referredColumn="CA3AB2DC-B778-AF9E-6F7A-DE251561E052"/>
+</associations>
+</Column>
+<Column name="kolicina" id="BC536C59-75AA-8843-8E32-DBC1E46C8AF9">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>820119D9-EB59-B5B8-6859-F7B63AFC95EC</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>10</dataTypeScale>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Recepti_Proizvodi_idProizvod" id="80B1595A-763C-66AD-ABA6-9D4312A85260">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>7E82E31C-5B77-6A62-94C3-1CF3C805EA31</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>E56B12EE-1AA7-03F9-D540-849598EEEC48</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="885652DF-BE97-8232-992D-C347C7981D11" referredColumn="E56B12EE-1AA7-03F9-D540-849598EEEC48"/>
+</associations>
+</Column>
+<Column name="Edinici_merki_merka" id="EADFB1EE-A100-8EEC-33D8-3809CB3831F4">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>4F7052C3-C0F4-0352-6455-C1AFCA6B7760</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<delegate>625CEB27-E657-A1BE-46D1-A0CE4B4EC1A0</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="64A13917-87A6-98ED-E87B-56184B1D3D22" referredColumn="625CEB27-E657-A1BE-46D1-A0CE4B4EC1A0"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5E88F88C-CA85-DAA6-5522-70516FDAF389" name="Ucestvo_recepti_PK">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>4516CA23-A8AE-7434-D13D-87861BF8D205</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EE9BC95F-7005-729C-8769-56F3BAC80AB3"/>
+<colUsage columnID="80B1595A-763C-66AD-ABA6-9D4312A85260"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FE9B0A92-69B7-AE21-7F93-A9ABB8BD1926" name="Ucestvo_recepti_Merki_FK">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>FFA5DCC6-B82E-8163-42B6-12776C2F275D</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EADFB1EE-A100-8EEC-33D8-3809CB3831F4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8F057131-4771-5913-4113-D708F37B7790" name="Ucestvo_recepti_Proizvodi_FK">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>167B8527-05D9-4678-91F3-8C435BB1CC0A</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EE9BC95F-7005-729C-8769-56F3BAC80AB3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="851A4517-F442-A4C5-A459-EC2CC3EDD1C0" name="Ucestvo_recepti_Recepti_FK">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>B4535CF5-582D-F9CB-E56E-05DFA7DF3ED3</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="80B1595A-763C-66AD-ABA6-9D4312A85260"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

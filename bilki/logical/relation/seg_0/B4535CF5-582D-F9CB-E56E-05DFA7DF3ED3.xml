@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="ucestvo_recepti_vo_recept" directorySegmentName="seg_0" id="B4535CF5-582D-F9CB-E56E-05DFA7DF3ED3">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 16:48:34 UTC</createdTime>
+<ownerDesignName>bilki</ownerDesignName>
+<engineerTo>
+<item key="7F2290F8-3C3F-6DE7-9F31-4137567E4904" value="true"/>
+</engineerTo>
+<sourcePk>38D92F0D-B6D5-5CC5-0995-0A1BD7C87B92</sourcePk>
+<identifying>true</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>E2211F5D-7C8E-A452-E4CD-67A0504F660A</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>B759C532-178F-49AE-AB61-25145B66DFD5</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

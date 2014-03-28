@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Vid_vo_proizvod" directorySegmentName="seg_0" id="E19036B6-1CA1-DA90-AD41-8AF270516118">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 16:37:36 UTC</createdTime>
+<ownerDesignName>bilki</ownerDesignName>
+<engineerTo>
+<item key="7F2290F8-3C3F-6DE7-9F31-4137567E4904" value="true"/>
+</engineerTo>
+<sourcePk>32EA1E25-C8FC-100C-DF01-5B06C1B631A5</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>5BA62CF2-E7BC-4D87-207A-827B98DD29AE</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>C37633B1-FFFB-408E-CD9E-A2DD5FEE7D51</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

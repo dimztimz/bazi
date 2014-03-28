@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="bilki" id="666F4F0C-2C96-9E96-F29D-097736C219BE" version="3.5">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 14:30:21 UTC</createdTime>
+<ownerDesignName>bilki</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>666F4F0C-2C96-9E96-F29D-097736C219BE</designId>
+</OSDM_Design>

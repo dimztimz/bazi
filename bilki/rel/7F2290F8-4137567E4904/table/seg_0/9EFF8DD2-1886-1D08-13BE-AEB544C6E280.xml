@@ -1,0 +1,90 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9EFF8DD2-1886-1D08-13BE-AEB544C6E280" name="Proizvod_leci_bolesti">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<ownerDesignName>bilki</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Proizvodi_idProizvod" id="182AE53F-3398-325C-795D-25360C350797">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<ownerDesignName>bilki</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>CA3AB2DC-B778-AF9E-6F7A-DE251561E052</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C53DFDD5-97DE-F392-4B76-4CEFFB2B3CBD" referredColumn="CA3AB2DC-B778-AF9E-6F7A-DE251561E052"/>
+</associations>
+</Column>
+<Column name="Bolesti_idBolest" id="4466CA59-5246-2B0C-F787-03951BB79123">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<ownerDesignName>bilki</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>ACE65322-C070-6B63-077F-679E8D5BCD85</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3B2FB3CF-856A-11F6-055F-88AAC8B2817C" referredColumn="ACE65322-C070-6B63-077F-679E8D5BCD85"/>
+</associations>
+</Column>
+<Column name="koef" id="3CC2D5BC-BBCF-717A-9023-C521864BD2E9">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>D18A98DB-16CB-EB7B-79FD-BF44220C641D</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>5</dataTypeScale>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isRelationshipColumn>true</isRelationshipColumn>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0F86453A-C7B9-E1CF-EA33-3B9EAE6882B0" name="Proizvod_leci_bolesti__IDX">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<ownerDesignName>bilki</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="182AE53F-3398-325C-795D-25360C350797"/>
+<colUsage columnID="4466CA59-5246-2B0C-F787-03951BB79123"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F363722F-2170-8E4D-81CA-E00CC181335C" name="FK_ASS_3">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>550DF416-D3CA-5CC9-2F11-E4747B1D7F69</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="182AE53F-3398-325C-795D-25360C350797"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DA15D480-878B-3E76-3B41-6C0FB6509F45" name="FK_ASS_4">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>550DF416-D3CA-5CC9-2F11-E4747B1D7F69</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4466CA59-5246-2B0C-F787-03951BB79123"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

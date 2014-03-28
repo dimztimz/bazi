@@ -1,0 +1,141 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="88CEF751-8009-31F8-5E95-9D685D8197E3" name="Proizvodi">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>C37633B1-FFFB-408E-CD9E-A2DD5FEE7D51</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="idProizvod" id="CA3AB2DC-B778-AF9E-6F7A-DE251561E052">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>577561B5-87E0-8662-AC7B-145443C8F607</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ime" id="0CC29F9A-6453-9568-8B53-8222AC82474B">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>B8295FC2-F108-C4DC-5579-634CD9FAFD60</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="opis" id="484D91EA-5B2E-CCE2-8C14-DBE069A7EEB4">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>980636FE-3A89-AA7F-9BB3-D7B37370F46E</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Vidovi_idVid" id="4A3AB95D-52CD-2621-60B0-C1E6338513D8">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>16589B2F-B23B-67BF-ED73-9C28E08735D3</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>52C8A27A-4B56-AC1F-4E3F-71D2221A0BD1</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9A7C70C7-8CF1-CB12-4E48-6F3A7983EFE9" referredColumn="52C8A27A-4B56-AC1F-4E3F-71D2221A0BD1"/>
+</associations>
+</Column>
+<Column name="Tip_proizvod_idTipProizvod" id="5C6EBB3D-E7DA-225A-6F10-69F0112013C5">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>5793DD23-18BE-8CDE-7A21-9C1BD1DF913D</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>0B8C844F-A47A-DF3B-2D11-F40032F42D28</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2F51C403-46BA-E99C-630A-0E13DD234770" referredColumn="0B8C844F-A47A-DF3B-2D11-F40032F42D28"/>
+</associations>
+</Column>
+<Column name="Nacin_obrabotka_idObrabotka" id="075F383F-4DDD-ACB4-F8F2-101A579A3CE8">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>7ECB3C41-F07F-FA17-58A4-4CA4100D2EA8</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>EA304BDD-BE91-F4D6-6816-A3E09FCC8515</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="06044F9E-B92B-E00D-7B8C-E12519A69216" referredColumn="EA304BDD-BE91-F4D6-6816-A3E09FCC8515"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9960A42A-B2B8-89B2-5357-9AEC60695350" name="Proizvodi_PK">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>B5937A83-C540-2F13-B5B3-2BD7836115C1</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CA3AB2DC-B778-AF9E-6F7A-DE251561E052"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="85E105F6-F0D1-CE96-9CDD-C36C507AA204" name="Proizvodi_Tip_proizvod_FK">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>11D024E1-13B1-F4F1-4E88-829297EC1632</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5C6EBB3D-E7DA-225A-6F10-69F0112013C5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8B38A065-2DC2-213A-4CA8-8142E808C402" name="Proizvodi_Nacin_obrabotka_FK">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>28E91CF0-781D-D47E-9178-F8193C8114C1</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="075F383F-4DDD-ACB4-F8F2-101A579A3CE8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F32411BC-4245-81AA-EC8B-A65137C3D2FC" name="Proizvodi_Vidovi_FK">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>E19036B6-1CA1-DA90-AD41-8AF270516118</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4A3AB95D-52CD-2621-60B0-C1E6338513D8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

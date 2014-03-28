@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Podvidovi_od_nadvid" directorySegmentName="seg_0" id="851A9F69-DC1C-F785-9526-33A784908EBC">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 14:49:01 UTC</createdTime>
+<ownerDesignName>bilki</ownerDesignName>
+<engineerTo>
+<item key="7F2290F8-3C3F-6DE7-9F31-4137567E4904" value="true"/>
+</engineerTo>
+<targetPk>32EA1E25-C8FC-100C-DF01-5B06C1B631A5</targetPk>
+<identifying>false</identifying>
+<nameOnSource>podvid</nameOnSource>
+<nameOnTarget>nadvid</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>5BA62CF2-E7BC-4D87-207A-827B98DD29AE</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>5BA62CF2-E7BC-4D87-207A-827B98DD29AE</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

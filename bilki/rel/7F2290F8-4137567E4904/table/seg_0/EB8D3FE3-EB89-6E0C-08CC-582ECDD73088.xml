@@ -1,0 +1,58 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="EB8D3FE3-EB89-6E0C-08CC-582ECDD73088" name="Nacin_obrabotka">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>C10B5D95-5DD1-D390-97DA-1DB41BFB2670</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="idObrabotka" id="EA304BDD-BE91-F4D6-6816-A3E09FCC8515">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>949A365F-4696-6668-E22E-527B5876A429</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="imeNaObrabotka" id="2114BF8C-5CD7-3C5A-769C-6129B2AE91E7">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>B29DA1B5-74A8-622B-DA9A-DEE80019E86B</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E1744E8F-7D77-2F5B-4246-6DF33E71F9DB" name="Nacin_obrabotka_PK">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>2BA18B45-9B28-8E78-D89A-1B4899C6D694</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EA304BDD-BE91-F4D6-6816-A3E09FCC8515"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4FE30892-3BCD-4F7B-2B13-9D984A00651C" name="Nacin_obrabotka__UN">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>9FB790A5-43D7-41AC-C48E-AC0A66A513D2</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2114BF8C-5CD7-3C5A-769C-6129B2AE91E7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

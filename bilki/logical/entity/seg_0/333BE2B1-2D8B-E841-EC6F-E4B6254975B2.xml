@@ -1,0 +1,69 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="333BE2B1-2D8B-E841-EC6F-E4B6254975B2" name="Tip_proizvod">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 15:00:43 UTC</createdTime>
+<ownerDesignName>bilki</ownerDesignName>
+<engineerTo>
+<item key="7F2290F8-3C3F-6DE7-9F31-4137567E4904" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="idTipProizvod" id="B0E4CCB2-F400-533F-5471-39F82D4C19FE">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 15:00:55 UTC</createdTime>
+<ownerDesignName>bilki</ownerDesignName>
+<engineerTo>
+<item key="7F2290F8-3C3F-6DE7-9F31-4137567E4904" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+</Attribute>
+<Attribute name="imeNaTip" id="6C2F60FF-DB62-EF42-EFBC-53752F895D4B">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 15:01:17 UTC</createdTime>
+<ownerDesignName>bilki</ownerDesignName>
+<engineerTo>
+<item key="7F2290F8-3C3F-6DE7-9F31-4137567E4904" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="AA8A6BFF-5019-A678-36CC-F7A3E1B8CB00" name="Tip_proizvod PK">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 15:01:15 UTC</createdTime>
+<ownerDesignName>bilki</ownerDesignName>
+<engineerTo>
+<item key="7F2290F8-3C3F-6DE7-9F31-4137567E4904" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>B0E4CCB2-F400-533F-5471-39F82D4C19FE</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="66927FEB-354F-BA65-02A8-0CD2982CFBCF" name="imeNaTip UK">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 15:05:05 UTC</createdTime>
+<ownerDesignName>bilki</ownerDesignName>
+<engineerTo>
+<item key="7F2290F8-3C3F-6DE7-9F31-4137567E4904" value="true"/>
+</engineerTo>
+<newElementsIDs>6C2F60FF-DB62-EF42-EFBC-53752F895D4B</newElementsIDs>
+<usedAttributes>
+<attributeRef>6C2F60FF-DB62-EF42-EFBC-53752F895D4B</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

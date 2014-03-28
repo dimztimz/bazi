@@ -1,0 +1,58 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DAA629AA-6FA7-9CC8-70F4-6198C79D636B" name="Tip_proizvod">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>333BE2B1-2D8B-E841-EC6F-E4B6254975B2</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="idTipProizvod" id="0B8C844F-A47A-DF3B-2D11-F40032F42D28">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>B0E4CCB2-F400-533F-5471-39F82D4C19FE</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="imeNaTip" id="B6457F53-DFB2-FF3B-471A-4E0271721FD6">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>6C2F60FF-DB62-EF42-EFBC-53752F895D4B</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FE14CBA5-877A-2AF9-BBE4-4CCFD80D3F32" name="Tip_proizvod_PK">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>AA8A6BFF-5019-A678-36CC-F7A3E1B8CB00</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0B8C844F-A47A-DF3B-2D11-F40032F42D28"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AE6923FB-EED0-7AD8-E894-9EA1BD466B6B" name="Tip_proizvod__UN">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>66927FEB-354F-BA65-02A8-0CD2982CFBCF</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B6457F53-DFB2-FF3B-471A-4E0271721FD6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

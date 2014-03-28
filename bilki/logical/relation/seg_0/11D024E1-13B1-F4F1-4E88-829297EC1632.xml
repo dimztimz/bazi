@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Proizvodi_od_tip" directorySegmentName="seg_0" id="11D024E1-13B1-F4F1-4E88-829297EC1632">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 16:44:28 UTC</createdTime>
+<ownerDesignName>bilki</ownerDesignName>
+<engineerTo>
+<item key="7F2290F8-3C3F-6DE7-9F31-4137567E4904" value="true"/>
+</engineerTo>
+<sourcePk>AA8A6BFF-5019-A678-36CC-F7A3E1B8CB00</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>333BE2B1-2D8B-E841-EC6F-E4B6254975B2</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>C37633B1-FFFB-408E-CD9E-A2DD5FEE7D51</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

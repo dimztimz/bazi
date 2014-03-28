@@ -1,0 +1,64 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A622DD42-FA2C-CF2B-ED22-A195CA463169" name="Recepti">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>E2211F5D-7C8E-A452-E4CD-67A0504F660A</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Proizvodi_idProizvod" id="E56B12EE-1AA7-03F9-D540-849598EEEC48">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>7817767B-02D4-836F-20D7-79C78A1B1262</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>CA3AB2DC-B778-AF9E-6F7A-DE251561E052</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="96EE9FFB-5D01-2494-B5BC-7EB0B9E992CB" referredColumn="CA3AB2DC-B778-AF9E-6F7A-DE251561E052"/>
+</associations>
+</Column>
+<Column name="opis" id="12DF4858-87FF-4CAF-18BA-C6225A4BD951">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>941AABDA-1024-3C1C-55FB-963A9B13C4EA</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="35890C04-11F9-913C-25B1-7A4908B02543" name="Recepti_PK">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>38D92F0D-B6D5-5CC5-0995-0A1BD7C87B92</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E56B12EE-1AA7-03F9-D540-849598EEEC48"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C97AC79C-F73A-F153-9C62-C4362A239DB3" name="Recepti_Proizvodi_FK">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>94316CAA-2DA5-7B26-F73F-FD1040D5762C</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E56B12EE-1AA7-03F9-D540-849598EEEC48"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

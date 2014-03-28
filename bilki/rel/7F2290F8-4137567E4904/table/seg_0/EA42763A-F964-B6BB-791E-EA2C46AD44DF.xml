@@ -1,0 +1,90 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="EA42763A-F964-B6BB-791E-EA2C46AD44DF" name="Simptomi_na_bolesti">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<ownerDesignName>bilki</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Bolesti_idBolest" id="B6234AF2-51A8-3774-0EBA-9244240CC68B">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<ownerDesignName>bilki</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>ACE65322-C070-6B63-077F-679E8D5BCD85</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="114F9D24-FF6B-73E8-18BF-A82B1AE64CCA" referredColumn="ACE65322-C070-6B63-077F-679E8D5BCD85"/>
+</associations>
+</Column>
+<Column name="Simptomi_idSimptom" id="C1B1F0D3-B1C1-8C3B-C060-42BDEB8C68C0">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<ownerDesignName>bilki</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>8BD9E586-91B1-1EFB-AF2F-D0065048AA84</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="71F03072-1C50-AA1B-BEA5-FCABAF41E871" referredColumn="8BD9E586-91B1-1EFB-AF2F-D0065048AA84"/>
+</associations>
+</Column>
+<Column name="koef" id="8145DC6B-23AA-24E0-3883-17C1883659A6">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>B5DEF84D-2157-C812-F84C-1EBC0487C9B1</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>5</dataTypeScale>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isRelationshipColumn>true</isRelationshipColumn>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A12C95AE-2F80-9F8E-47A5-266A128B6FB4" name="Simptomi_na_bolesti__IDX">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<ownerDesignName>bilki</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B6234AF2-51A8-3774-0EBA-9244240CC68B"/>
+<colUsage columnID="C1B1F0D3-B1C1-8C3B-C060-42BDEB8C68C0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F1828753-B6CA-E0CE-B477-4E561C2D2EC7" name="FK_ASS_10">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>6B087564-2BEB-DD27-B239-C4F3C88E410B</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B6234AF2-51A8-3774-0EBA-9244240CC68B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="77F7FA3B-8AFB-166A-DF4F-402132915540" name="FK_ASS_11">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>6B087564-2BEB-DD27-B239-C4F3C88E410B</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C1B1F0D3-B1C1-8C3B-C060-42BDEB8C68C0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

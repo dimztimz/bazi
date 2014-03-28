@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="72BD413D-4A84-0A7A-5EFF-EECB238ED594" mainViewID="E235C0E9-D33B-AB60-8B5A-CAE5CFCE8D91">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 14:30:21 UTC</createdTime>
+<ownerDesignName>bilki</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

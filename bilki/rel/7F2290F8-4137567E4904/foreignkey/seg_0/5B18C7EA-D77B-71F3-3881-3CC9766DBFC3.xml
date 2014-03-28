@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="5B18C7EA-D77B-71F3-3881-3CC9766DBFC3" name="Vidovi_Vidovi_FK">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 18:18:04 UTC</createdTime>
+<generatorID>851A9F69-DC1C-F785-9526-33A784908EBC</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<containerWithKeyObject>7194B366-4C38-A5E7-4B81-8F374DE8827B</containerWithKeyObject>
+<deleteRule>NO ACTION</deleteRule>
+<localFKIndex>3C27026F-54DB-3D9C-9655-C8ECC37DC8C7</localFKIndex>
+<keyObject>3BB9CC48-31E1-61F1-A8FE-36C14C66C14D</keyObject>
+<mandatory>false</mandatory>
+<transferable>true</transferable>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
