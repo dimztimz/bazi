@@ -1,36 +1,36 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <oracle.dbtools.crest.model.design.relational.RelationalDesign>
-   <object objectType="Table" objectID="BA2A6AC3-B135-14C3-E01A-69FE514CCE67" name="Bolesti" seqName="seg_0"/>
-   <object objectType="Table" objectID="8099CF98-EDA6-CB76-AD60-35B1F3BD4372" name="Drzava" seqName="seg_0"/>
-   <object objectType="Table" objectID="635AA87D-16F7-CCA0-F184-F66C103A126E" name="Edinici_merki" seqName="seg_0"/>
-   <object objectType="Table" objectID="EB8D3FE3-EB89-6E0C-08CC-582ECDD73088" name="Nacin_obrabotka" seqName="seg_0"/>
-   <object objectType="Table" objectID="9EFF8DD2-1886-1D08-13BE-AEB544C6E280" name="Proizvod_leci_bolesti" seqName="seg_0"/>
    <object objectType="Table" objectID="5D93837C-2799-6782-E44F-88D037994F75" name="Proizvod_leci_simptomi" seqName="seg_0"/>
-   <object objectType="Table" objectID="88CEF751-8009-31F8-5E95-9D685D8197E3" name="Proizvodi" seqName="seg_0"/>
-   <object objectType="Table" objectID="A622DD42-FA2C-CF2B-ED22-A195CA463169" name="Recepti" seqName="seg_0"/>
-   <object objectType="Table" objectID="D96EF1DF-9853-03DF-6441-398EA45FAF7F" name="Regioni" seqName="seg_0"/>
-   <object objectType="Table" objectID="C57C2654-90F0-9B4F-3907-C4EFF56456FD" name="Simptomi" seqName="seg_0"/>
-   <object objectType="Table" objectID="EA42763A-F964-B6BB-791E-EA2C46AD44DF" name="Simptomi_na_bolesti" seqName="seg_0"/>
-   <object objectType="Table" objectID="DAA629AA-6FA7-9CC8-70F4-6198C79D636B" name="Tip_proizvod" seqName="seg_0"/>
-   <object objectType="Table" objectID="B5BC34FF-8BD7-EA1F-7B4B-CB6B4705027C" name="Ucestvo_recepti" seqName="seg_0"/>
+   <object objectType="Table" objectID="635AA87D-16F7-CCA0-F184-F66C103A126E" name="Edinici_merki" seqName="seg_0"/>
    <object objectType="Table" objectID="7194B366-4C38-A5E7-4B81-8F374DE8827B" name="Vidovi" seqName="seg_0"/>
+   <object objectType="Table" objectID="8099CF98-EDA6-CB76-AD60-35B1F3BD4372" name="Drzava" seqName="seg_0"/>
+   <object objectType="Table" objectID="88CEF751-8009-31F8-5E95-9D685D8197E3" name="Proizvodi" seqName="seg_0"/>
+   <object objectType="Table" objectID="9EFF8DD2-1886-1D08-13BE-AEB544C6E280" name="Proizvod_leci_bolesti" seqName="seg_0"/>
    <object objectType="Table" objectID="9F87D4BD-D09A-6F24-67EA-21E2AFCF94EA" name="Vidovi_vo_regioni" seqName="seg_0"/>
-   <object objectType="FKIndexAssociation" objectID="114F9D24-FF6B-73E8-18BF-A82B1AE64CCA" name="FK_ASS_10" seqName="seg_0"/>
-   <object objectType="FKIndexAssociation" objectID="71F03072-1C50-AA1B-BEA5-FCABAF41E871" name="FK_ASS_11" seqName="seg_0"/>
-   <object objectType="FKIndexAssociation" objectID="FAF86E64-F477-EC28-EBE9-246469981C98" name="FK_ASS_13" seqName="seg_0"/>
-   <object objectType="FKIndexAssociation" objectID="63763B56-D2FB-9769-D8E9-C3677957D046" name="FK_ASS_14" seqName="seg_0"/>
-   <object objectType="FKIndexAssociation" objectID="C53DFDD5-97DE-F392-4B76-4CEFFB2B3CBD" name="FK_ASS_3" seqName="seg_0"/>
-   <object objectType="FKIndexAssociation" objectID="3B2FB3CF-856A-11F6-055F-88AAC8B2817C" name="FK_ASS_4" seqName="seg_0"/>
-   <object objectType="FKIndexAssociation" objectID="75F6459C-6994-EAAA-4656-38FF82A8BCF3" name="FK_ASS_5" seqName="seg_0"/>
-   <object objectType="FKIndexAssociation" objectID="9D0447D1-D2E4-7050-3004-BF1F0E3A4752" name="FK_ASS_6" seqName="seg_0"/>
+   <object objectType="Table" objectID="A622DD42-FA2C-CF2B-ED22-A195CA463169" name="Recepti" seqName="seg_0"/>
+   <object objectType="Table" objectID="B5BC34FF-8BD7-EA1F-7B4B-CB6B4705027C" name="Ucestvo_recepti" seqName="seg_0"/>
+   <object objectType="Table" objectID="BA2A6AC3-B135-14C3-E01A-69FE514CCE67" name="Bolesti" seqName="seg_0"/>
+   <object objectType="Table" objectID="C57C2654-90F0-9B4F-3907-C4EFF56456FD" name="Simptomi" seqName="seg_0"/>
+   <object objectType="Table" objectID="D96EF1DF-9853-03DF-6441-398EA45FAF7F" name="Regioni" seqName="seg_0"/>
+   <object objectType="Table" objectID="DAA629AA-6FA7-9CC8-70F4-6198C79D636B" name="Tip_proizvod" seqName="seg_0"/>
+   <object objectType="Table" objectID="EA42763A-F964-B6BB-791E-EA2C46AD44DF" name="Simptomi_na_bolesti" seqName="seg_0"/>
+   <object objectType="Table" objectID="EB8D3FE3-EB89-6E0C-08CC-582ECDD73088" name="Nacin_obrabotka" seqName="seg_0"/>
    <object objectType="FKIndexAssociation" objectID="06044F9E-B92B-E00D-7B8C-E12519A69216" name="Proizvodi_Nacin_obrabotka_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="114F9D24-FF6B-73E8-18BF-A82B1AE64CCA" name="FK_ASS_10" seqName="seg_0"/>
    <object objectType="FKIndexAssociation" objectID="2F51C403-46BA-E99C-630A-0E13DD234770" name="Proizvodi_Tip_proizvod_FK" seqName="seg_0"/>
-   <object objectType="FKIndexAssociation" objectID="9A7C70C7-8CF1-CB12-4E48-6F3A7983EFE9" name="Proizvodi_Vidovi_FK" seqName="seg_0"/>
-   <object objectType="FKIndexAssociation" objectID="96EE9FFB-5D01-2494-B5BC-7EB0B9E992CB" name="Recepti_Proizvodi_FK" seqName="seg_0"/>
-   <object objectType="FKIndexAssociation" objectID="74CDCD7A-9324-9DF0-6642-0B5BB0DA46E6" name="Regioni_Drzava_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="3B2FB3CF-856A-11F6-055F-88AAC8B2817C" name="FK_ASS_4" seqName="seg_0"/>
    <object objectType="FKIndexAssociation" objectID="5A0EDD45-8DAA-A594-6052-D941A5F83219" name="Regioni_Regioni_FK" seqName="seg_0"/>
-   <object objectType="FKIndexAssociation" objectID="64A13917-87A6-98ED-E87B-56184B1D3D22" name="Ucestvo_recepti_Merki_FK" seqName="seg_0"/>
-   <object objectType="FKIndexAssociation" objectID="E8380B83-01EA-8C8A-2408-17DB80AED722" name="Ucestvo_recepti_Proizvodi_FK" seqName="seg_0"/>
-   <object objectType="FKIndexAssociation" objectID="885652DF-BE97-8232-992D-C347C7981D11" name="Ucestvo_recepti_Recepti_FK" seqName="seg_0"/>
    <object objectType="FKIndexAssociation" objectID="5B18C7EA-D77B-71F3-3881-3CC9766DBFC3" name="Vidovi_Vidovi_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="63763B56-D2FB-9769-D8E9-C3677957D046" name="FK_ASS_14" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="64A13917-87A6-98ED-E87B-56184B1D3D22" name="Ucestvo_recepti_Merki_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="71F03072-1C50-AA1B-BEA5-FCABAF41E871" name="FK_ASS_11" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="74CDCD7A-9324-9DF0-6642-0B5BB0DA46E6" name="Regioni_Drzava_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="75F6459C-6994-EAAA-4656-38FF82A8BCF3" name="FK_ASS_5" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="885652DF-BE97-8232-992D-C347C7981D11" name="Ucestvo_recepti_Recepti_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="96EE9FFB-5D01-2494-B5BC-7EB0B9E992CB" name="Recepti_Proizvodi_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="9A7C70C7-8CF1-CB12-4E48-6F3A7983EFE9" name="Proizvodi_Vidovi_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="9D0447D1-D2E4-7050-3004-BF1F0E3A4752" name="FK_ASS_6" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="C53DFDD5-97DE-F392-4B76-4CEFFB2B3CBD" name="FK_ASS_3" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="E8380B83-01EA-8C8A-2408-17DB80AED722" name="Ucestvo_recepti_Proizvodi_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="FAF86E64-F477-EC28-EBE9-246469981C98" name="FK_ASS_13" seqName="seg_0"/>
 </oracle.dbtools.crest.model.design.relational.RelationalDesign>
