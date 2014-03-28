@@ -1,28 +1,28 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <oracle.dbtools.crest.model.design.logical.LogicalDesign>
-   <object objectType="Entity" objectID="333BE2B1-2D8B-E841-EC6F-E4B6254975B2" name="Tip_proizvod" seqName="seg_0"/>
-   <object objectType="Entity" objectID="4743C007-9338-DF6A-58F8-6C9310DFD0A0" name="Simptomi" seqName="seg_0"/>
-   <object objectType="Entity" objectID="4EFA8FF6-D662-511C-1C2F-22FE80FF5EEB" name="Regioni" seqName="seg_0"/>
-   <object objectType="Entity" objectID="5BA62CF2-E7BC-4D87-207A-827B98DD29AE" name="Vidovi" seqName="seg_0"/>
+   <object objectType="Entity" objectID="BA7192E7-5BA3-64B2-0297-CC068A6CB2FF" name="Bolesti" seqName="seg_0"/>
    <object objectType="Entity" objectID="805FD79D-6441-405A-5ADB-8F7A89656111" name="Drzava" seqName="seg_0"/>
    <object objectType="Entity" objectID="AFB9C5B6-20EE-B1AB-855D-2434ED39278A" name="Edinici_merki" seqName="seg_0"/>
-   <object objectType="Entity" objectID="B759C532-178F-49AE-AB61-25145B66DFD5" name="Ucestvo_recepti" seqName="seg_0"/>
-   <object objectType="Entity" objectID="BA7192E7-5BA3-64B2-0297-CC068A6CB2FF" name="Bolesti" seqName="seg_0"/>
    <object objectType="Entity" objectID="C10B5D95-5DD1-D390-97DA-1DB41BFB2670" name="Nacin_obrabotka" seqName="seg_0"/>
    <object objectType="Entity" objectID="C37633B1-FFFB-408E-CD9E-A2DD5FEE7D51" name="Proizvodi" seqName="seg_0"/>
    <object objectType="Entity" objectID="E2211F5D-7C8E-A452-E4CD-67A0504F660A" name="Recepti" seqName="seg_0"/>
+   <object objectType="Entity" objectID="4EFA8FF6-D662-511C-1C2F-22FE80FF5EEB" name="Regioni" seqName="seg_0"/>
+   <object objectType="Entity" objectID="4743C007-9338-DF6A-58F8-6C9310DFD0A0" name="Simptomi" seqName="seg_0"/>
+   <object objectType="Entity" objectID="333BE2B1-2D8B-E841-EC6F-E4B6254975B2" name="Tip_proizvod" seqName="seg_0"/>
+   <object objectType="Entity" objectID="B759C532-178F-49AE-AB61-25145B66DFD5" name="Ucestvo_recepti" seqName="seg_0"/>
+   <object objectType="Entity" objectID="5BA62CF2-E7BC-4D87-207A-827B98DD29AE" name="Vidovi" seqName="seg_0"/>
+   <object objectType="Relation" objectID="CF35C7F8-9AA7-3B77-27C2-CA6A14DEA6A0" name="Drzavi_vo_Region" seqName="seg_0"/>
+   <object objectType="Relation" objectID="851A9F69-DC1C-F785-9526-33A784908EBC" name="Podvidovi_od_nadvid" seqName="seg_0"/>
+   <object objectType="Relation" objectID="550DF416-D3CA-5CC9-2F11-E4747B1D7F69" name="Proizvod_leci_bolesti" seqName="seg_0"/>
+   <object objectType="Relation" objectID="DCDB6517-FDE2-4C33-06BF-C24E57A57859" name="Proizvod_leci_simptomi" seqName="seg_0"/>
    <object objectType="Relation" objectID="11D024E1-13B1-F4F1-4E88-829297EC1632" name="Proizvodi_od_tip" seqName="seg_0"/>
-   <object objectType="Relation" objectID="167B8527-05D9-4678-91F3-8C435BB1CC0A" name="proizvod_vo_ucestvo_recepti" seqName="seg_0"/>
    <object objectType="Relation" objectID="28E91CF0-781D-D47E-9178-F8193C8114C1" name="Proizvodi_so_posleden_nacin_obrabotka" seqName="seg_0"/>
    <object objectType="Relation" objectID="2D23A097-A73F-FFAB-C32A-3A4BE281DD5E" name="Regioni_vo_region" seqName="seg_0"/>
-   <object objectType="Relation" objectID="550DF416-D3CA-5CC9-2F11-E4747B1D7F69" name="Proizvod_leci_bolesti" seqName="seg_0"/>
    <object objectType="Relation" objectID="6B087564-2BEB-DD27-B239-C4F3C88E410B" name="Simptomi_na_bolesti" seqName="seg_0"/>
-   <object objectType="Relation" objectID="851A9F69-DC1C-F785-9526-33A784908EBC" name="Podvidovi_od_nadvid" seqName="seg_0"/>
+   <object objectType="Relation" objectID="E19036B6-1CA1-DA90-AD41-8AF270516118" name="Vid_vo_proizvod" seqName="seg_0"/>
+   <object objectType="Relation" objectID="E0F51E29-3AE3-EC26-CA47-3C3EE1D88D71" name="Vidovi_vo_regioni" seqName="seg_0"/>
+   <object objectType="Relation" objectID="FFA5DCC6-B82E-8163-42B6-12776C2F275D" name="edinica_merka_vo_recept" seqName="seg_0"/>
+   <object objectType="Relation" objectID="167B8527-05D9-4678-91F3-8C435BB1CC0A" name="proizvod_vo_ucestvo_recepti" seqName="seg_0"/>
    <object objectType="Relation" objectID="94316CAA-2DA5-7B26-F73F-FD1040D5762C" name="recept_dava_prozivod" seqName="seg_0"/>
    <object objectType="Relation" objectID="B4535CF5-582D-F9CB-E56E-05DFA7DF3ED3" name="ucestvo_recepti_vo_recept" seqName="seg_0"/>
-   <object objectType="Relation" objectID="CF35C7F8-9AA7-3B77-27C2-CA6A14DEA6A0" name="Drzavi_vo_Region" seqName="seg_0"/>
-   <object objectType="Relation" objectID="DCDB6517-FDE2-4C33-06BF-C24E57A57859" name="Proizvod_leci_simptomi" seqName="seg_0"/>
-   <object objectType="Relation" objectID="E0F51E29-3AE3-EC26-CA47-3C3EE1D88D71" name="Vidovi_vo_regioni" seqName="seg_0"/>
-   <object objectType="Relation" objectID="E19036B6-1CA1-DA90-AD41-8AF270516118" name="Vid_vo_proizvod" seqName="seg_0"/>
-   <object objectType="Relation" objectID="FFA5DCC6-B82E-8163-42B6-12776C2F275D" name="edinica_merka_vo_recept" seqName="seg_0"/>
 </oracle.dbtools.crest.model.design.logical.LogicalDesign>

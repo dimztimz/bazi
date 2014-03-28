@@ -90,6 +90,17 @@
 <colAssociation fkAssociation="06044F9E-B92B-E00D-7B8C-E12519A69216" referredColumn="EA304BDD-BE91-F4D6-6816-A3E09FCC8515"/>
 </associations>
 </Column>
+<Column name="datumDodavanje" id="195E4DCF-36BA-3BEA-F90D-68F2BC32B05B">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 19:24:04 UTC</createdTime>
+<generatorID>D91226C5-7C9B-D0B9-C3E7-D6A5E99A47A4</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="9960A42A-B2B8-89B2-5357-9AEC60695350" name="Proizvodi_PK">

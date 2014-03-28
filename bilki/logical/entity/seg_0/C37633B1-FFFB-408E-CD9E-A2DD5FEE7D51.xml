@@ -19,8 +19,9 @@
 <createdBy>dimeNA</createdBy>
 <createdTime>2014-03-28 14:58:16 UTC</createdTime>
 <ownerDesignName>bilki</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="7F2290F8-3C3F-6DE7-9F31-4137567E4904" value="true"/>
+<item key="7F2290F8-3C3F-6DE7-9F31-4137567E4904" value="false"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -31,8 +32,9 @@
 <createdBy>dimeNA</createdBy>
 <createdTime>2014-03-28 14:58:37 UTC</createdTime>
 <ownerDesignName>bilki</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="7F2290F8-3C3F-6DE7-9F31-4137567E4904" value="true"/>
+<item key="7F2290F8-3C3F-6DE7-9F31-4137567E4904" value="false"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -43,8 +45,9 @@
 <createdBy>dimeNA</createdBy>
 <createdTime>2014-03-28 14:59:11 UTC</createdTime>
 <ownerDesignName>bilki</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="7F2290F8-3C3F-6DE7-9F31-4137567E4904" value="true"/>
+<item key="7F2290F8-3C3F-6DE7-9F31-4137567E4904" value="false"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -57,8 +60,9 @@
 <createdTime>2014-03-28 16:37:36 UTC</createdTime>
 <generatorID>E19036B6-1CA1-DA90-AD41-8AF270516118</generatorID>
 <ownerDesignName>bilki</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="7F2290F8-3C3F-6DE7-9F31-4137567E4904" value="true"/>
+<item key="7F2290F8-3C3F-6DE7-9F31-4137567E4904" value="false"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <referedAttribute>62FFDFC2-E157-CA72-D908-7780F7BFD77C</referedAttribute>
@@ -72,8 +76,9 @@
 <createdTime>2014-03-28 16:44:28 UTC</createdTime>
 <generatorID>11D024E1-13B1-F4F1-4E88-829297EC1632</generatorID>
 <ownerDesignName>bilki</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="7F2290F8-3C3F-6DE7-9F31-4137567E4904" value="true"/>
+<item key="7F2290F8-3C3F-6DE7-9F31-4137567E4904" value="false"/>
 </engineerTo>
 <referedAttribute>B0E4CCB2-F400-533F-5471-39F82D4C19FE</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
@@ -86,8 +91,9 @@
 <createdTime>2014-03-28 17:16:26 UTC</createdTime>
 <generatorID>28E91CF0-781D-D47E-9178-F8193C8114C1</generatorID>
 <ownerDesignName>bilki</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="7F2290F8-3C3F-6DE7-9F31-4137567E4904" value="true"/>
+<item key="7F2290F8-3C3F-6DE7-9F31-4137567E4904" value="false"/>
 </engineerTo>
 <referedAttribute>949A365F-4696-6668-E22E-527B5876A429</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
@@ -95,14 +101,27 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>10</dataTypePrecision>
 </Attribute>
+<Attribute name="datumDodavanje" id="D91226C5-7C9B-D0B9-C3E7-D6A5E99A47A4">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 19:23:31 UTC</createdTime>
+<ownerDesignName>bilki</ownerDesignName>
+<engineerTo>
+<item key="7F2290F8-3C3F-6DE7-9F31-4137567E4904" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="B5937A83-C540-2F13-B5B3-2BD7836115C1" name="Proizvodi PK">
 <createdBy>dimeNA</createdBy>
 <createdTime>2014-03-28 14:58:33 UTC</createdTime>
 <ownerDesignName>bilki</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="7F2290F8-3C3F-6DE7-9F31-4137567E4904" value="true"/>
+<item key="7F2290F8-3C3F-6DE7-9F31-4137567E4904" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

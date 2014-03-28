@@ -57,6 +57,17 @@
 <colAssociation fkAssociation="5B18C7EA-D77B-71F3-3881-3CC9766DBFC3" referredColumn="52C8A27A-4B56-AC1F-4E3F-71D2221A0BD1"/>
 </associations>
 </Column>
+<Column name="datumOtkrivanje" id="DEBACD3C-4B5A-7408-FFC8-BFFFBA598534">
+<createdBy>dimeNA</createdBy>
+<createdTime>2014-03-28 19:24:04 UTC</createdTime>
+<generatorID>70BBD772-A34E-63E9-6639-7F6EBEB04B69</generatorID>
+<ownerDesignName>bilki</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="3BB9CC48-31E1-61F1-A8FE-36C14C66C14D" name="Vidovi_PK">
