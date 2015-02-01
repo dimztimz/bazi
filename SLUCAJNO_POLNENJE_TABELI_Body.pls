@@ -28,7 +28,7 @@ procedure napolni_vidovi as
       povt := vrati_slucaen_broj_podvidovi;
       for j in 1..povt loop
         ime := initcap(dbms_random.string('L', 20));
-        l_ime := initcap(dbms_random.string('L', 20)) || ' ' || initcap(dbms_random.string('L', 20));
+        l_ime := l_ime || ' ' || initcap(dbms_random.string('L', 20));
         v_id2 := seq_vidovi.nextval;
         datum2 :=  datum + dbms_random.value(1, SYSDATE-datum);
         insert into vidovi values (v_id2, l_ime, ime, v_id, datum2);
