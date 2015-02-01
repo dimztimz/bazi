@@ -1,0 +1,7 @@
+create or replace package slucajno_polnenje_tabeli as 
+
+  function vrati_slucaen_broj_podvidovi return number;
+  function vrati_slucaen_string return varchar2;
+  procedure napolni_vidovi;
+
+end slucajno_polnenje_tabeli;
