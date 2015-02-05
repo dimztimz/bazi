@@ -45,11 +45,10 @@ procedure napolni_vidovi as
         ime := vrati_slucaen_string;
         l_ime2 := l_ime || ' ' || vrati_slucaen_string;
         v_id2 := seq_vidovi.nextval;
-        datum2 :=  datum + dbms_random.value(1, SYSDATE-datum);
+        datum2 :=  datum + dbms_random.value(0, SYSDATE-datum);
         insert into vidovi values (v_id2, l_ime2, ime, v_id, datum2);
       end loop;
     end loop;
-    commit;
   end napolni_vidovi;
 
   procedure napolni_tip_proizvod as
@@ -88,25 +87,21 @@ procedure napolni_vidovi as
     tip number(10);
     nacin number(10);
     datum date;
-    
+    --z number(10);
     cursor c_vidovi is
-      SELECT IDVID FROM Vidovi
-      ORDER BY dbms_random.value;
+      SELECT idvid, datumotkrivanje FROM Vidovi;
     povt number(5);
-    max_vidovi_id VIDOVI.IDVID%TYPE;
     max_tip_id TIP_PROIZVOD.IDTIPPROIZVOD%TYPE;
     max_nacin_obrabotka_id NACIN_OBRABOTKA.IDOBRABOTKA%TYPE;
-    max_proizvod_id proizvodi.idproizvod%type;
-    p_id2 PROIZVODI.IDPROIZVOD%type;
   begin
-    select max(idvid) into max_vidovi_id from vidovi;
     select max(IDTIPPROIZVOD) into max_tip_id from tip_proizvod;
     select max(IDOBRABOTKA) into max_nacin_obrabotka_id from NACIN_OBRABOTKA;
-  
-    open c_vidovi;
-    FOR i IN 1..3 LOOP
-      povt := trunc(abs(sys.dbms_random.NORMAL*4));
-      fetch c_vidovi into vid_id;
+    --z := 1000;
+    FOR i IN c_vidovi LOOP
+      --if (z = 0) then exit; end if;
+      --z := z - 1;
+      povt := trunc(abs(sys.dbms_random.NORMAL*2));
+      vid_id := i.idvid;
       FOR j IN 1..povt LOOP
       begin
         p_id := seq_proizvodi.nextval;
@@ -114,8 +109,7 @@ procedure napolni_vidovi as
         opis := vrati_slucaen_opis;
         tip := round(SYS.DBMS_RANDOM.VALUE(1,max_tip_id));
         nacin := round(SYS.DBMS_RANDOM.VALUE(1,max_nacin_obrabotka_id));
-        select datumotkrivanje into datum from vidovi where IDVID=vid_id;
-        datum := datum + dbms_random.value(1, SYSDATE-datum);
+        datum := i.datumotkrivanje + dbms_random.value(0, SYSDATE-i.datumotkrivanje);
         insert into proizvodi
         values(p_id, ime, opis, vid_id, tip, nacin, datum);
       exception when others then
@@ -123,7 +117,7 @@ procedure napolni_vidovi as
       end;
       END LOOP;
     END LOOP;
-    close c_vidovi;
+    if (c_vidovi%isopen) then close c_vidovi; end if;
   exception
     when others then
       if (c_vidovi%isopen) then close c_vidovi; end if;
@@ -138,7 +132,6 @@ procedure napolni_vidovi as
     nacin number(10);
     datum date;  
     povt number(5);
-    max_vidovi_id VIDOVI.IDVID%TYPE;
     max_tip_id TIP_PROIZVOD.IDTIPPROIZVOD%TYPE;
     max_nacin_obrabotka_id NACIN_OBRABOTKA.IDOBRABOTKA%TYPE;
     max_proizvod_id proizvodi.idproizvod%type;
@@ -146,37 +139,45 @@ procedure napolni_vidovi as
     kolicina UCESTVO_RECEPTI.KOLICINA%type;
     merka UCESTVO_RECEPTI.EDINICI_MERKI_MERKA%type;
   begin
-    select max(idvid) into max_vidovi_id from vidovi;
     select max(IDTIPPROIZVOD) into max_tip_id from tip_proizvod;
     select max(IDOBRABOTKA) into max_nacin_obrabotka_id from NACIN_OBRABOTKA;
     vid_id := null;
-    select max(idproizvod) into max_proizvod_id from proizvodi;
-    for i in 1..100 loop
-      p_id := seq_proizvodi.nextval;
-      ime := vrati_slucaen_string;
-      opis := vrati_slucaen_opis;
-      tip := round(SYS.DBMS_RANDOM.VALUE(1,max_tip_id));
-      nacin := round(SYS.DBMS_RANDOM.VALUE(1,max_nacin_obrabotka_id));
-      datum := sysdate - dbms_random.value(1, 18000);
-      insert into proizvodi
-      values(p_id, ime, opis, vid_id, tip, nacin, datum);
-      
-      povt := round(sys.dbms_random.NORMAL*10 + 10);
-      if (povt > 0) then
+    for z in 1..100 loop
+      select max(idproizvod) into max_proizvod_id from proizvodi;
+      for i in 1..1000 loop
+        p_id := seq_proizvodi.nextval;
+        ime := vrati_slucaen_string;
         opis := vrati_slucaen_opis;
-        insert into recepti values (p_id, opis);
-      end if;
-      for j in 1..povt loop
-        begin
-          p_id2 := round(SYS.DBMS_RANDOM.value(1, max_proizvod_id));
-          kolicina := SYS.DBMS_RANDOM.value(0, 20);
-          select merka into merka from (select merka from edinici_merki order by SYS.DBMS_RANDOM.value) where rownum = 1;
-          insert into UCESTVO_RECEPTI values (p_id2, kolicina, p_id, merka);
-        exception when others then null;
-        end;
+        tip := round(SYS.DBMS_RANDOM.VALUE(1,max_tip_id));
+        nacin := round(SYS.DBMS_RANDOM.VALUE(1,max_nacin_obrabotka_id));
+        datum := sysdate - dbms_random.value(1, 18250);
+        insert into proizvodi
+        values(p_id, ime, opis, vid_id, tip, nacin, datum);
+        
+        povt := round(sys.dbms_random.NORMAL*10 + 10);
+        if (povt > 0) then
+          opis := vrati_slucaen_opis;
+          insert into recepti values (p_id, opis);
+        end if;
+        for j in 1..povt loop
+          begin
+            p_id2 := round(SYS.DBMS_RANDOM.value(1, max_proizvod_id));
+            kolicina := SYS.DBMS_RANDOM.value(0, 20);
+            select e.merka into merka from (select e.merka from edinici_merki e order by SYS.DBMS_RANDOM.value) e where rownum = 1;
+            insert into UCESTVO_RECEPTI values (p_id2, kolicina, p_id, merka);
+          exception when others then
+            DBMS_OUTPUT.PUT_LINE(SYS.DBMS_UTILITY.FORMAT_ERROR_STACK);
+          end;
+        end loop;
+        select max(datumdodavanje) into datum
+        from proizvodi p, ucestvo_recepti u
+        where u.proizvodi_idproizvod = p.idproizvod AND
+         u.recepti_proizvodi_idproizvod = p_id;
+        datum := datum + dbms_random.value(1, SYSDATE-datum);
+        update proizvodi
+        set datumdodavanje=datum
+        where idproizvod = p_id;
       end loop;
-      
     end loop;
-  
   end napolni_proizvodi2;
 end slucajno_polnenje_tabeli;
