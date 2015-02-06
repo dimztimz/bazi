@@ -154,7 +154,7 @@ procedure napolni_vidovi as
         insert into proizvodi
         values(p_id, ime, opis, vid_id, tip, nacin, datum);
         
-        povt := round(sys.dbms_random.NORMAL*10 + 10);
+        povt := round(sys.dbms_random.NORMAL*5 + 5);
         if (povt > 0) then
           opis := vrati_slucaen_opis;
           insert into recepti values (p_id, opis);
@@ -169,14 +169,15 @@ procedure napolni_vidovi as
             DBMS_OUTPUT.PUT_LINE(SYS.DBMS_UTILITY.FORMAT_ERROR_STACK);
           end;
         end loop;
-        select max(datumdodavanje) into datum
-        from proizvodi p, ucestvo_recepti u
-        where u.proizvodi_idproizvod = p.idproizvod AND
-         u.recepti_proizvodi_idproizvod = p_id;
-        datum := datum + dbms_random.value(1, SYSDATE-datum);
-        update proizvodi
-        set datumdodavanje=datum
-        where idproizvod = p_id;
+        --selectov e mnogu baven
+        --select nvl(max(datumdodavanje), datum) into datum
+        --from proizvodi p, ucestvo_recepti u
+        --where u.proizvodi_idproizvod = p.idproizvod AND
+        -- u.recepti_proizvodi_idproizvod = p_id;
+        --datum := datum + dbms_random.value(1, SYSDATE-datum);
+        --update proizvodi
+        --set datumdodavanje=datum
+        --where idproizvod = p_id;
       end loop;
     end loop;
   end napolni_proizvodi2;
