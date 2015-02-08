@@ -13,7 +13,7 @@ select trunc(datumdodavanje, 'YYYY') a, count(*) from proizvodi group by trunc(d
 select trunc(datumotkrivanje, 'YYYY') a, count(*) from vidovi group by trunc(datumotkrivanje, 'YYYY') order by a;
 /
 drop sequence seq_proizvodi;
-create SEQUENCE seq_proizvodi START WITH 264738;
+create SEQUENCE seq_proizvodi START WITH 364738;
 /
 
 declare
