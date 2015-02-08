@@ -1,31 +1,3 @@
-create sequence seq_proizvodi increment by 1 start with 7;
-/
-
-create or replace trigger tr_prozivodi_insert
-	before insert on proizvodi
-	for each row
-begin
-	if (:new.idProizvod is null or :new.idProizvod < 1) then
-		:new.idProizvod := seq_proizvodi.nextval;
-	end if;
-end;
-/
-
-select * from PROIZVODI;
-/
-
-create or replace package pak_proizvodi as
-	procedure insert_proizvod(p_ime varchar2, p_opis varchar2, p_idVid number,
-		p_idTip number, p_idNacinObrabotka number, p_datumDodavanje date);
-	procedure update_proizvod(p_id number, p_ime varchar2, p_opis varchar2,
-		p_idVid number, p_idTip number, p_idNacinObrabotka number,
-		p_datumDodavanje date);
-	procedure delete_proizvod(p_id number);
-	
-	function najdiBrojNaProizvodiSodrzatVid(p_vidId number) return number;
-end pak_proizvodi;
-/
-
 create or replace package body pak_proizvodi as
 	procedure insert_proizvod(p_ime varchar2, p_opis varchar2, p_idVid number,
 		p_idTip number, p_idNacinObrabotka number, p_datumDodavanje date) is
@@ -100,4 +72,3 @@ create or replace package body pak_proizvodi as
 		return -1;
 	end;
 end pak_proizvodi;
-/
