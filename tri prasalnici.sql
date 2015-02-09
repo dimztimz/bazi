@@ -6,6 +6,85 @@ select *
     lower(V.LATINSKO_IME) like lower('%' || :search || '%'))
   connect by prior V.IDVID = V.VIDOVI_IDVID;
 
+/*
+prva rabota kon optimizacija na prasalnikot e da go otstranime connect by zasto
+imame hierarhija (drvo) so dlabocina 1. dovolno e samo edno spojuvanje na tabelata
+so samata sebe (connect by pravi onolku spojuvanja kolku sto e dlabocinata)
+pa go dobivame sledniov prasalnik koj e skoro ekvivalenten ako nemame povekje od
+dve nivoa vo podatocite. vikame skoro zasto redosledot moze da bide razlicen.
+*/
+
+select *
+from vidovi v
+where
+  V.VIDOVI_IDVID is null AND 
+  (lower(V.IME) like lower('%' || :search || '%') OR
+  lower(V.LATINSKO_IME) like lower('%' || :search || '%'))
+union
+select *
+from vidovi v
+where
+  --operatorot in e vsusnot spojuvanje
+  V.VIDOVI_IDVID in (
+    select v.idvid
+    from vidovi v
+    where
+      V.VIDOVI_IDVID is null AND 
+      (lower(V.IME) like lower('%' || :search || '%') OR
+      lower(V.LATINSKO_IME) like lower('%' || :search || '%'))
+    );
+
+/*
+sepak i so noviov prasalnik ne dobivame nikakva prednost. da probame da stavime
+index na kolonata so nadvoresen kluc (kon samata sebe) vidovi_idvid
+*/
+create index vidovi_nadvid on vidovi(vidovi_idvid);
+/*indexot nisto ne smena, spjuvanjeto e pak hash join */
+drop index vidovi_nadvid;
+/*glavnata optimizacija treba da se napravi vusnost pri prebaruvanjeto so LIKE
+za toa ne mozeme da stavime obicn index so create index
+mora da koristime full text index od paketot
+http://www.dba-oracle.com/oracle_tips_like_sql_index.htm
+http://docs.oracle.com/cd/B28359_01/text.111/b28303/ind.htm#g1020588
+*/
+create index vidovi_ime on vidovi(ime) indextype is CTXSYS.CTXCAT;
+create index vidovi_lat_ime on vidovi(latinsko_ime) indextype is CTXSYS.CTXCAT;
+
+select *
+from vidovi v
+where
+  V.VIDOVI_IDVID is null AND 
+  (CATSEARCH(ime, :search, null) > 0  OR
+  CATSEARCH(latinsko_ime, :search, null) > 0)
+union
+select *
+from vidovi v
+where
+  V.VIDOVI_IDVID in (
+    select v.idvid
+    from vidovi v
+    where
+      V.VIDOVI_IDVID is null AND 
+      (CATSEARCH(ime, :search, null) > 0  OR
+      CATSEARCH(latinsko_ime, :search, null) > 0)
+    );
+/*dobivame zabrzuvaje od okolu 3 pati odnosno od 1,5 sekuna na polovina sekunda
+negativna strana na catsearch e sto prebaruvame samo po celi zborovi ili
+del od pocetokot na zborot ako stiavme dzvezdicka vo stringot desno, primer 'felix*'
+
+ne prebaruva po del od krajot na zborot ili od sredinata, pa rezultatite ne se ekvivalentni
+kako so like kade prebaruvame bilo kade vo zborot.
+isto taka catserach ima problem ako prebaruvame samo po edna bukva na pocetokot na zborot
+primer 'e*' ili 'x*', se zakuva. tuka podobro e so like.
+*/
+
+select *
+  from vidovi v
+  start with V.VIDOVI_IDVID is null AND 
+      (CATSEARCH(ime, :search, null) > 0  OR
+      CATSEARCH(latinsko_ime, :search, null) > 0)
+  connect by prior V.IDVID = V.VIDOVI_IDVID;
+
 
 -- site proizovdi sto sodrzat eden vid ili negovite podvidovi
 select unique P.IDPROIZVOD, P.IME

@@ -1,0 +1,24 @@
+select ur.*
+  from UCESTVO_RECEPTI ur inner join PROIZVODI p on UR.PROIZVODI_IDPROIZVOD=P.IDPROIZVOD
+start with P.VIDOVI_IDVID  between 832 and 836 or P.VIDOVI_IDVID  between 21326 and 21330
+connect by PROIZVODI_IDPROIZVOD = prior UR.RECEPTI_PROIZVODI_IDPROIZVOD;
+
+select P.IDPROIZVOD,P.IME, P.VIDOVI_IDVID, ur.*
+  from PROIZVODI p left outer join UCESTVO_RECEPTI ur on UR.RECEPTI_PROIZVODI_IDPROIZVOD=P.IDPROIZVOD
+start with P.VIDOVI_IDVID  between 832 and 836 or P.VIDOVI_IDVID  between 21326 and 21330
+connect by PROIZVODI_IDPROIZVOD = prior P.IDPROIZVOD;
+
+
+/
+select ur.*
+from UCESTVO_RECEPTI ur inner join PROIZVODI p on UR.PROIZVODI_IDPROIZVOD=P.IDPROIZVOD
+where P.VIDOVI_IDVID = 1;
+
+/
+select ur.*
+from UCESTVO_RECEPTI ur
+where ur.PROIZVODI_IDPROIZVOD in (
+  select idproizvod
+  from PROIZVODI p
+  where p.VIDOVI_IDVID = 1
+  );
