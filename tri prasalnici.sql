@@ -1,4 +1,4 @@
--- site vidovi i podvidovi so ime na osnoven vid
+-- 1. site vidovi i podvidovi so ime na osnoven vid
 select *
   from vidovi v
   start with V.VIDOVI_IDVID is null AND 
@@ -14,6 +14,7 @@ pa go dobivame sledniov prasalnik koj e skoro ekvivalenten ako nemame povekje od
 dve nivoa vo podatocite. vikame skoro zasto redosledot moze da bide razlicen.
 */
 
+-- 1.1 ostranet connect by
 select *
 from vidovi v
 where
@@ -47,6 +48,8 @@ mora da koristime full text index od paketot
 http://www.dba-oracle.com/oracle_tips_like_sql_index.htm
 http://docs.oracle.com/cd/B28359_01/text.111/b28303/ind.htm#g1020588
 */
+
+--1.2 staven text index
 create index vidovi_ime on vidovi(ime) indextype is CTXSYS.CTXCAT;
 create index vidovi_lat_ime on vidovi(latinsko_ime) indextype is CTXSYS.CTXCAT;
 
@@ -78,6 +81,7 @@ isto taka catserach ima problem ako prebaruvame samo po edna bukva na pocetokot 
 primer 'e*' ili 'x*', se zakuva. tuka podobro e so like.
 */
 
+--1.3 text index primenet i kaj connect by
 select *
   from vidovi v
   start with V.VIDOVI_IDVID is null AND 
@@ -86,7 +90,7 @@ select *
   connect by prior V.IDVID = V.VIDOVI_IDVID;
 
 
--- site proizovdi sto sodrzat eden vid ili negovite podvidovi
+-- 2. site proizovdi sto sodrzat eden vid ili negovite podvidovi
 select unique P.IDPROIZVOD, P.IME
   from PROIZVODI p left outer join UCESTVO_RECEPTI ur on P.IDPROIZVOD = UR.RECEPTI_PROIZVODI_IDPROIZVOD
 start with VIDOVI_IDVID in (select V.IDVID
@@ -96,6 +100,28 @@ start with VIDOVI_IDVID in (select V.IDVID
     lower(V.LATINSKO_IME) like lower('%' || :search || '%'))
   connect by prior V.IDVID = V.VIDOVI_IDVID)
 connect by PROIZVODI_IDPROIZVOD = prior IDPROIZVOD;
+
+/*spjuvanjeto so IN vo start with pravi problemi, vo execution plan connect by optimizatorot
+go pravi bez filtriranje, kako da nema start with, pa potoa filtrira.
+toa e mnogu bavno dobivame izminuvanje ogromen graf pocnuvaki od sekoj jazol
+toa go optimizirame taka sto toa spoluvanje go krevame gore*/
+
+-- 2.2 optimizaran raboti normalno. prvo naogja vidovi istko kako vo prasalnik 1,
+-- pa pustame prebaruvanje trgnuvajki od proizvodite so tie vidovi
+select unique P.IDPROIZVOD, P.IME, P.VIDOVI_IDVID
+  from PROIZVODI p left outer join UCESTVO_RECEPTI ur on P.IDPROIZVOD = UR.RECEPTI_PROIZVODI_IDPROIZVOD
+  left outer join (
+    select V.IDVID
+    from vidovi v
+    start with V.VIDOVI_IDVID is null AND 
+      (lower(V.IME) like lower('%' || :search || '%') OR
+      lower(V.LATINSKO_IME) like lower('%' || :search || '%'))
+    connect by prior V.IDVID = V.VIDOVI_IDVID
+  ) vv on P.VIDOVI_IDVID = VV.IDVID
+start with VV.IDVID is not null
+connect by PROIZVODI_IDPROIZVOD = prior IDPROIZVOD;
+
+
 
 -- najcesto koristen vid
 select V.IME, V.LATINSKO_IME
