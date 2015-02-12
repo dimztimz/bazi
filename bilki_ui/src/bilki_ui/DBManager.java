@@ -13,8 +13,7 @@ public class DBManager {
 	}
 	
 	private Connection getNewConnection() throws SQLException {
-	    Connection conn = null;
-	    conn = DriverManager.getConnection("jdbc:oracle:thin:@WIN-WRXX17Q2IR4:1521:edudb", "bilki", "stobilo");
+	    Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@WIN-WRXX17Q2IR4:1521:edudb", "bilki", "stobilo");
 	    System.out.println("Connected to database");
 	    return conn;
 	}
@@ -34,6 +33,7 @@ public class DBManager {
 	public void close() {
 		try {
 			connection.close();
+			System.out.println("Databese connection closed");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

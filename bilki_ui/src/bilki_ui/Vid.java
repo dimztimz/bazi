@@ -3,11 +3,11 @@ package bilki_ui;
 import java.util.Date;
 
 public class Vid {
-	int idvid;
-	String ime;
-	String latinskoIme;
-	int id_nadvid;
-	Date datumOtkruvanje;
+	private int idvid;
+	private String ime;
+	private String latinskoIme;
+	private int id_nadvid;
+	private Date datumOtkruvanje;
 	public Vid(int idvid, String ime, String latinskoIme, int id_nadvid,
 			Date datumOtkruvanje) {
 		super();
