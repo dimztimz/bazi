@@ -13,6 +13,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import javax.swing.table.AbstractTableModel;
+
 import java.awt.BorderLayout;
 
 import javax.swing.JPanel;
@@ -25,7 +26,15 @@ import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import javax.swing.JSpinner;
 import javax.swing.BoxLayout;
-import javax.swing.JTextArea;
+
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import java.awt.Insets;
+import java.awt.Component;
+
+import javax.swing.JTextField;
+
+import com.toedter.calendar.JDateChooser;
 
 class VidoviTableModel extends AbstractTableModel {
 	
@@ -138,6 +147,7 @@ public class FrameVidovi extends JFrame {
 	Detali rezimDetali;
 	VidoviTableModel tableModel;
 	private static final long serialVersionUID = 8043703367648877792L;
+	private JDateChooser dateChooser;
 	private JTable table;
 	private JButton btnPrev;
 	private JScrollPane scrollPane;
@@ -154,12 +164,21 @@ public class FrameVidovi extends JFrame {
 	private JPanel pnlDolu;
 	private JPanel pnlDetali;
 	private JButton btnCloseDetails;
-	private JTextArea txtrFsdfsdfsdf;
 	private JLabel lblStatusBar;
 	private JPanel pnlUreduvanje;
 	private JButton btnDodadiVid;
 	private JButton btnIzmeniVid;
 	private JButton btnIzbrisiVid;
+	private JLabel lvlVidId;
+	private JTextField txtVidId;
+	private JLabel lblVidLatinskoIme;
+	private JTextField txtVidLatinskoIme;
+	private JLabel lblVidIme;
+	private JTextField txtVidIme;
+	private JLabel label;
+	private JLabel label_1;
+	private JTextField textField;
+	private JButton btnDetailsAccept;
 
 	/**
 	 * Create the frame.
@@ -269,6 +288,96 @@ public class FrameVidovi extends JFrame {
 		
 		pnlDetali = new JPanel();
 		pnlDolu.add(pnlDetali);
+		GridBagLayout gbl_pnlDetali = new GridBagLayout();
+		gbl_pnlDetali.columnWidths = new int[]{129, 85, 0, 0, 54, 0};
+		gbl_pnlDetali.rowHeights = new int[]{23, 0, 0, 0, 0};
+		gbl_pnlDetali.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gbl_pnlDetali.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		pnlDetali.setLayout(gbl_pnlDetali);
+		
+		lvlVidId = new JLabel("\u0418\u0414");
+		GridBagConstraints gbc_lvlVidId = new GridBagConstraints();
+		gbc_lvlVidId.anchor = GridBagConstraints.EAST;
+		gbc_lvlVidId.insets = new Insets(0, 0, 5, 5);
+		gbc_lvlVidId.gridx = 0;
+		gbc_lvlVidId.gridy = 0;
+		pnlDetali.add(lvlVidId, gbc_lvlVidId);
+		
+		txtVidId = new JTextField();
+		GridBagConstraints gbc_txtVidId = new GridBagConstraints();
+		gbc_txtVidId.insets = new Insets(0, 0, 5, 5);
+		gbc_txtVidId.fill = GridBagConstraints.HORIZONTAL;
+		gbc_txtVidId.gridx = 1;
+		gbc_txtVidId.gridy = 0;
+		pnlDetali.add(txtVidId, gbc_txtVidId);
+		txtVidId.setColumns(10);
+		
+		label_1 = new JLabel("\u0418\u0414 \u041D\u0430\u0434\u0432\u0438\u0434");
+		GridBagConstraints gbc_label_1 = new GridBagConstraints();
+		gbc_label_1.anchor = GridBagConstraints.SOUTH;
+		gbc_label_1.insets = new Insets(0, 0, 5, 5);
+		gbc_label_1.gridx = 3;
+		gbc_label_1.gridy = 0;
+		pnlDetali.add(label_1, gbc_label_1);
+		
+		lblVidLatinskoIme = new JLabel("\u041B\u0430\u0442\u0438\u043D\u0441\u043A\u043E \u0438\u043C\u0435");
+		GridBagConstraints gbc_lblVidLatinskoIme = new GridBagConstraints();
+		gbc_lblVidLatinskoIme.anchor = GridBagConstraints.EAST;
+		gbc_lblVidLatinskoIme.insets = new Insets(0, 0, 5, 5);
+		gbc_lblVidLatinskoIme.gridx = 0;
+		gbc_lblVidLatinskoIme.gridy = 1;
+		pnlDetali.add(lblVidLatinskoIme, gbc_lblVidLatinskoIme);
+		
+		txtVidLatinskoIme = new JTextField();
+		GridBagConstraints gbc_txtVidLatinskoIme = new GridBagConstraints();
+		gbc_txtVidLatinskoIme.insets = new Insets(0, 0, 5, 5);
+		gbc_txtVidLatinskoIme.fill = GridBagConstraints.HORIZONTAL;
+		gbc_txtVidLatinskoIme.gridx = 1;
+		gbc_txtVidLatinskoIme.gridy = 1;
+		pnlDetali.add(txtVidLatinskoIme, gbc_txtVidLatinskoIme);
+		txtVidLatinskoIme.setColumns(10);
+		
+		textField = new JTextField();
+		GridBagConstraints gbc_textField = new GridBagConstraints();
+		gbc_textField.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textField.insets = new Insets(0, 0, 5, 5);
+		gbc_textField.gridx = 3;
+		gbc_textField.gridy = 1;
+		pnlDetali.add(textField, gbc_textField);
+		textField.setColumns(10);
+		
+		lblVidIme = new JLabel("\u0418\u043C\u0435");
+		GridBagConstraints gbc_lblVidIme = new GridBagConstraints();
+		gbc_lblVidIme.anchor = GridBagConstraints.EAST;
+		gbc_lblVidIme.insets = new Insets(0, 0, 5, 5);
+		gbc_lblVidIme.gridx = 0;
+		gbc_lblVidIme.gridy = 2;
+		pnlDetali.add(lblVidIme, gbc_lblVidIme);
+		
+		txtVidIme = new JTextField();
+		GridBagConstraints gbc_txtVidIme = new GridBagConstraints();
+		gbc_txtVidIme.insets = new Insets(0, 0, 5, 5);
+		gbc_txtVidIme.fill = GridBagConstraints.HORIZONTAL;
+		gbc_txtVidIme.gridx = 1;
+		gbc_txtVidIme.gridy = 2;
+		pnlDetali.add(txtVidIme, gbc_txtVidIme);
+		txtVidIme.setColumns(10);
+		
+		label = new JLabel("\u0414\u0430\u0442\u0443\u043C \u043D\u0430 \u043E\u0442\u043A\u0440\u0438\u0432\u0430\u045A\u0435");
+		GridBagConstraints gbc_label = new GridBagConstraints();
+		gbc_label.anchor = GridBagConstraints.EAST;
+		gbc_label.insets = new Insets(0, 0, 0, 5);
+		gbc_label.gridx = 0;
+		gbc_label.gridy = 3;
+		pnlDetali.add(label, gbc_label);
+		
+		dateChooser = new JDateChooser();
+		GridBagConstraints gbc_dateChooser = new GridBagConstraints();
+		gbc_dateChooser.insets = new Insets(0, 0, 0, 5);
+		gbc_dateChooser.fill = GridBagConstraints.HORIZONTAL;
+		gbc_dateChooser.gridx = 1;
+		gbc_dateChooser.gridy = 3;
+		pnlDetali.add(dateChooser, gbc_dateChooser);
 		
 		btnCloseDetails = new JButton("^ \u0417\u0430\u0442\u0432\u043E\u0440\u0438");
 		btnCloseDetails.addActionListener(new ActionListener() {
@@ -277,13 +386,22 @@ public class FrameVidovi extends JFrame {
 				pnlDetali.setVisible(false);
 			}
 		});
-		pnlDetali.add(btnCloseDetails);
 		
-		txtrFsdfsdfsdf = new JTextArea();
-		txtrFsdfsdfsdf.setText("fsdfsdfsdf");
-		pnlDetali.add(txtrFsdfsdfsdf);
+		btnDetailsAccept = new JButton("\u041F\u0440\u0438\u0444\u0430\u0442\u0438");
+		GridBagConstraints gbc_btnDetailsAccept = new GridBagConstraints();
+		gbc_btnDetailsAccept.insets = new Insets(0, 0, 0, 5);
+		gbc_btnDetailsAccept.gridx = 3;
+		gbc_btnDetailsAccept.gridy = 3;
+		pnlDetali.add(btnDetailsAccept, gbc_btnDetailsAccept);
+		
+		GridBagConstraints gbc_btnCloseDetails = new GridBagConstraints();
+		gbc_btnCloseDetails.anchor = GridBagConstraints.NORTH;
+		gbc_btnCloseDetails.gridx = 4;
+		gbc_btnCloseDetails.gridy = 3;
+		pnlDetali.add(btnCloseDetails, gbc_btnCloseDetails);
 		
 		lblStatusBar = new JLabel("Status Bar");
+		lblStatusBar.setAlignmentX(Component.CENTER_ALIGNMENT);
 		pnlDolu.add(lblStatusBar);
 		
 		pnlStranici = new JPanel();
