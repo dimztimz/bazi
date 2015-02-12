@@ -1,5 +1,7 @@
 package bilki_ui;
 
+import javax.swing.JComponent;
+import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JTable;
@@ -7,13 +9,18 @@ import javax.swing.JScrollPane;
 
 import java.awt.event.WindowEvent;
 import java.util.List;
+
 import javax.swing.table.DefaultTableModel;
+
 import java.awt.BorderLayout;
+
 import javax.swing.JPanel;
+
 import java.awt.FlowLayout;
 import java.awt.event.WindowAdapter;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 import javax.swing.JLabel;
 import javax.swing.JSpinner;
 
@@ -33,6 +40,8 @@ public class FrameVidovi extends JFrame {
 	private JLabel lblPage;
 	private JSpinner spinner;
 	private JButton btnGoto;
+	private JLabel label;
+	private JLabel lblNumPages;
 
 	/**
 	 * Create the frame.
@@ -42,6 +51,8 @@ public class FrameVidovi extends JFrame {
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowOpened(WindowEvent arg0) {
+				startRowNum = 1;
+				lblNumPages.setText(Integer.toString((Main.getVidDao().getBrojNaVidovi()+99)/100));
 				refreshTable();
 			}
 			@Override
@@ -92,6 +103,7 @@ public class FrameVidovi extends JFrame {
 		
 		panel_1 = new JPanel();
 		getContentPane().add(panel_1, BorderLayout.NORTH);
+		panel_1.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
 		lblPage = new JLabel("\u0421\u0442\u0440\u0430\u043D\u0438\u0446\u0430:");
 		panel_1.add(lblPage);
@@ -109,10 +121,19 @@ public class FrameVidovi extends JFrame {
 				} catch (Exception e) {}
 			}
 		});
+		
+		label = new JLabel("/");
+		panel_1.add(label);
+		
+		lblNumPages = new JLabel("0");
+		panel_1.add(lblNumPages);
 		panel_1.add(btnGoto);
 		
 		tableModel = (DefaultTableModel)table.getModel();
-		startRowNum = 1;
+		
+		JComponent editor = (JSpinner.DefaultEditor) spinner.getEditor();
+	    JFormattedTextField ftf = ((JSpinner.DefaultEditor) editor).getTextField();
+	    ftf.setColumns(5);
 	}
 	
 	private void refreshTable() {

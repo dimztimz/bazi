@@ -11,7 +11,23 @@ import java.util.List;
 
 public class VidDao {
 	
-	
+	public int getBrojNaVidovi() {
+		int ret = -1;
+		Connection con = Main.getDbManager().getConnection();
+		String query =
+			"select count(*) broj "
+			+ "from vidovi v";
+		try (PreparedStatement stmt = con.prepareStatement(query)) {			
+			try (ResultSet rs = stmt.executeQuery()) {
+				if (rs.next()) {
+					ret = rs.getInt("BROJ");
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return ret;
+	}
 	
 	public List<Vid> getVidoviPodredeni(int startRowNum, int endRowNum) {
 		Connection con = Main.getDbManager().getConnection();
