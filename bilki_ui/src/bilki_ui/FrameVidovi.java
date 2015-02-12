@@ -128,7 +128,14 @@ class VidoviTableModel extends AbstractTableModel {
 }
 
 public class FrameVidovi extends JFrame {
-
+	
+	enum Detali {
+		SKRIENI_DETALI,
+		REZIM_DODAVANJE,
+		REZIM_UREDUVANJE,
+		REZIM_GLEDAJ_DETALI;
+	}
+	Detali rezimDetali;
 	VidoviTableModel tableModel;
 	private static final long serialVersionUID = 8043703367648877792L;
 	private JTable table;
@@ -140,14 +147,19 @@ public class FrameVidovi extends JFrame {
 	private JLabel lblPage;
 	private JSpinner spinner;
 	private JButton btnGoto;
-	private JLabel label;
+	private JLabel lblStraniciKosaCrta;
 	private JLabel lblNumPages;
 	private JButton btnFirstPage;
 	private JButton btlLastPage;
 	private JPanel pnlDolu;
 	private JPanel pnlDetali;
-	private JButton btnNewButton;
+	private JButton btnCloseDetails;
 	private JTextArea txtrFsdfsdfsdf;
+	private JLabel lblStatusBar;
+	private JPanel pnlUreduvanje;
+	private JButton btnDodadiVid;
+	private JButton btnIzmeniVid;
+	private JButton btnIzbrisiVid;
 
 	/**
 	 * Create the frame.
@@ -168,6 +180,8 @@ public class FrameVidovi extends JFrame {
 			    JFormattedTextField ftf = ((JSpinner.DefaultEditor) editor).getTextField();
 			    ftf.setColumns(5);
 			    
+			    rezimDetali = Detali.SKRIENI_DETALI;
+			    pnlDetali.setVisible(false);
 			}
 			@Override
 			public void windowClosing(WindowEvent arg0) {
@@ -229,16 +243,48 @@ public class FrameVidovi extends JFrame {
 		});
 		pnlNavigacija.add(btlLastPage);
 		
+		pnlUreduvanje = new JPanel();
+		pnlDolu.add(pnlUreduvanje);
+		
+		btnDodadiVid = new JButton("\u0414\u043E\u0434\u0430\u0434\u0438");
+		btnDodadiVid.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				rezimDetali = Detali.REZIM_DODAVANJE;
+				pnlDetali.setVisible(true);
+			}
+		});
+		pnlUreduvanje.add(btnDodadiVid);
+		
+		btnIzmeniVid = new JButton("\u0418\u0437\u043C\u0435\u043D\u0438");
+		btnIzmeniVid.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				rezimDetali = Detali.REZIM_UREDUVANJE;
+				pnlDetali.setVisible(true);
+			}
+		});
+		pnlUreduvanje.add(btnIzmeniVid);
+		
+		btnIzbrisiVid = new JButton("\u0418\u0437\u0431\u0440\u0448\u0438");
+		pnlUreduvanje.add(btnIzbrisiVid);
+		
 		pnlDetali = new JPanel();
-		FlowLayout flowLayout = (FlowLayout) pnlDetali.getLayout();
 		pnlDolu.add(pnlDetali);
 		
-		btnNewButton = new JButton("New button");
-		pnlDetali.add(btnNewButton);
+		btnCloseDetails = new JButton("^ \u0417\u0430\u0442\u0432\u043E\u0440\u0438");
+		btnCloseDetails.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				rezimDetali = Detali.SKRIENI_DETALI;
+				pnlDetali.setVisible(false);
+			}
+		});
+		pnlDetali.add(btnCloseDetails);
 		
 		txtrFsdfsdfsdf = new JTextArea();
 		txtrFsdfsdfsdf.setText("fsdfsdfsdf");
 		pnlDetali.add(txtrFsdfsdfsdf);
+		
+		lblStatusBar = new JLabel("Status Bar");
+		pnlDolu.add(lblStatusBar);
 		
 		pnlStranici = new JPanel();
 		getContentPane().add(pnlStranici, BorderLayout.NORTH);
@@ -260,8 +306,8 @@ public class FrameVidovi extends JFrame {
 			}
 		});
 		
-		label = new JLabel("/");
-		pnlStranici.add(label);
+		lblStraniciKosaCrta = new JLabel("/");
+		pnlStranici.add(lblStraniciKosaCrta);
 		
 		lblNumPages = new JLabel("0");
 		pnlStranici.add(lblNumPages);

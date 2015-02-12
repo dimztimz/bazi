@@ -31,6 +31,9 @@ public class DBManager {
 	}
 	
 	public void close() {
+		if (connection == null) {
+			return;
+		}
 		try {
 			connection.close();
 			System.out.println("Databese connection closed");
