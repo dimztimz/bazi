@@ -1,6 +1,9 @@
 package bilki_ui;
 
+import java.awt.EventQueue;
 import java.sql.SQLException;
+
+import javax.swing.UIManager;
 
 public class Main {
 	
@@ -24,13 +27,24 @@ public class Main {
 			e.printStackTrace();
 		}
 		vidDao = new VidDao();
-		FrameVidovi.main(args);
-		//dbManager.getConnection().commit();
-		//dbManager.close();
-		
-
+		try {
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					FrameVidovi frame = new FrameVidovi();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
 	}
 
+	@SuppressWarnings("unused")
 	private static void testVidDao() {
 		Vid v1 = getVidDao().getVid(1);
 		Vid v2 = getVidDao().getVid(2);
