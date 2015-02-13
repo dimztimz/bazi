@@ -35,6 +35,9 @@ import java.awt.Component;
 import javax.swing.JTextField;
 
 import com.toedter.calendar.JDateChooser;
+import java.awt.Font;
+import javax.swing.UIManager;
+import javax.swing.ListSelectionModel;
 
 class VidoviTableModel extends AbstractTableModel {
 	
@@ -134,6 +137,47 @@ class VidoviTableModel extends AbstractTableModel {
 	public int findColumn(String columnName){
 		return koloni.indexOf(columnName);
 	}
+	
+	public boolean addEntry(Vid vid) {
+		if (Main.getVidDao().insertVid(vid)) {
+			data.add(vid);
+			fireTableRowsInserted(data.size()-1, data.size()-1);
+			return true;
+		}
+		return false;
+	}
+
+	public void reload() {
+		size = Main.getVidDao().getBrojNaVidovi();
+		if (currentPage > getTotalPages()) {
+			loadLastPage();
+		} else {
+			setCurrentPage(currentPage);
+		}
+	}
+
+	public boolean removeEntry(int rowNumber) {
+		if (Main.getVidDao().deleteVid(data.get(rowNumber))) {
+			data.remove(rowNumber);
+			fireTableRowsDeleted(rowNumber, rowNumber);
+			return true;
+		}
+		return false;
+	}
+
+	public Vid getData(int rowNumber) {
+		return data.get(rowNumber);
+	}
+
+	public boolean update(int rowNumber, Vid v) {
+		if (Main.getVidDao().updateVid(v)) {
+			data.set(rowNumber, v);
+			fireTableRowsUpdated(rowNumber, rowNumber);
+			return true;
+		}
+		return false;
+	}
+	
 }
 
 public class FrameVidovi extends JFrame {
@@ -145,6 +189,7 @@ public class FrameVidovi extends JFrame {
 		REZIM_GLEDAJ_DETALI;
 	}
 	Detali rezimDetali;
+	int selektiranaRedicaDetali;
 	VidoviTableModel tableModel;
 	private static final long serialVersionUID = 8043703367648877792L;
 	private JDateChooser dateChooser;
@@ -176,9 +221,10 @@ public class FrameVidovi extends JFrame {
 	private JLabel lblVidIme;
 	private JTextField txtVidIme;
 	private JLabel label;
-	private JLabel label_1;
-	private JTextField textField;
+	private JLabel lblVidNadvidId;
+	private JTextField txtVidNadvidId;
 	private JButton btnDetailsAccept;
+	private JButton btnRefresh;
 
 	/**
 	 * Create the frame.
@@ -215,6 +261,7 @@ public class FrameVidovi extends JFrame {
 		getContentPane().add(scrollPane);
 		
 		table = new JTable();
+		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table.setFillsViewportHeight(true);
 		scrollPane.setViewportView(table);
 		
@@ -265,34 +312,67 @@ public class FrameVidovi extends JFrame {
 		pnlUreduvanje = new JPanel();
 		pnlDolu.add(pnlUreduvanje);
 		
-		btnDodadiVid = new JButton("\u0414\u043E\u0434\u0430\u0434\u0438");
+		btnDodadiVid = new JButton("\u0414\u043E\u0434\u0430\u0434\u0438 +");
 		btnDodadiVid.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				rezimDetali = Detali.REZIM_DODAVANJE;
+				txtVidId.setEditable(false);
+				txtVidId.setText(null);
+				txtVidLatinskoIme.setText(null);
+				txtVidIme.setText(null);
+				txtVidNadvidId.setText("0");
 				pnlDetali.setVisible(true);
 			}
 		});
 		pnlUreduvanje.add(btnDodadiVid);
 		
-		btnIzmeniVid = new JButton("\u0418\u0437\u043C\u0435\u043D\u0438");
+		btnIzmeniVid = new JButton("\u0418\u0437\u043C\u0435\u043D\u0438 \u25CC");
 		btnIzmeniVid.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				rezimDetali = Detali.REZIM_UREDUVANJE;
-				pnlDetali.setVisible(true);
+				int a = table.getSelectedRow();
+				if (a < 0) {
+					lblStatusBar.setText("Изберете редица за уредување");
+				} else {
+					Vid v = tableModel.getData(a);
+					selektiranaRedicaDetali = a;
+					rezimDetali = Detali.REZIM_UREDUVANJE;
+					txtVidId.setEditable(false);
+					txtVidId.setText(Integer.toString(v.getIdvid()));
+					txtVidLatinskoIme.setText(v.getLatinskoIme());
+					txtVidIme.setText(v.getIme());
+					txtVidNadvidId.setText(Integer.toString(v.getId_nadvid()));
+					if (v.getDatumOtkruvanje() != null) {
+						dateChooser.setDate(v.getDatumOtkruvanje());
+					}
+					pnlDetali.setVisible(true);
+				}
 			}
 		});
 		pnlUreduvanje.add(btnIzmeniVid);
 		
-		btnIzbrisiVid = new JButton("\u0418\u0437\u0431\u0440\u0448\u0438");
+		btnIzbrisiVid = new JButton("\u0418\u0437\u0431\u0440\u0448\u0438 \u00D7");
+		btnIzbrisiVid.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				int a = table.getSelectedRow();
+				if (a < 0) {
+					lblStatusBar.setText("Ништо не е избрано");
+				}
+				else if (tableModel.removeEntry(a)) {
+					lblStatusBar.setText("Успешно бришење");
+				} else {
+					lblStatusBar.setText("Неуспешно бришење");
+				}
+			}
+		});
 		pnlUreduvanje.add(btnIzbrisiVid);
 		
 		pnlDetali = new JPanel();
 		pnlDolu.add(pnlDetali);
 		GridBagLayout gbl_pnlDetali = new GridBagLayout();
 		gbl_pnlDetali.columnWidths = new int[]{129, 85, 0, 0, 54, 0};
-		gbl_pnlDetali.rowHeights = new int[]{23, 0, 0, 0, 0};
+		gbl_pnlDetali.rowHeights = new int[]{0, 23, 0, 0, 0, 0};
 		gbl_pnlDetali.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-		gbl_pnlDetali.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gbl_pnlDetali.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		pnlDetali.setLayout(gbl_pnlDetali);
 		
 		lvlVidId = new JLabel("\u0418\u0414");
@@ -300,7 +380,7 @@ public class FrameVidovi extends JFrame {
 		gbc_lvlVidId.anchor = GridBagConstraints.EAST;
 		gbc_lvlVidId.insets = new Insets(0, 0, 5, 5);
 		gbc_lvlVidId.gridx = 0;
-		gbc_lvlVidId.gridy = 0;
+		gbc_lvlVidId.gridy = 1;
 		pnlDetali.add(lvlVidId, gbc_lvlVidId);
 		
 		txtVidId = new JTextField();
@@ -308,24 +388,33 @@ public class FrameVidovi extends JFrame {
 		gbc_txtVidId.insets = new Insets(0, 0, 5, 5);
 		gbc_txtVidId.fill = GridBagConstraints.HORIZONTAL;
 		gbc_txtVidId.gridx = 1;
-		gbc_txtVidId.gridy = 0;
+		gbc_txtVidId.gridy = 1;
 		pnlDetali.add(txtVidId, gbc_txtVidId);
 		txtVidId.setColumns(10);
 		
-		label_1 = new JLabel("\u0418\u0414 \u041D\u0430\u0434\u0432\u0438\u0434");
-		GridBagConstraints gbc_label_1 = new GridBagConstraints();
-		gbc_label_1.anchor = GridBagConstraints.SOUTH;
-		gbc_label_1.insets = new Insets(0, 0, 5, 5);
-		gbc_label_1.gridx = 3;
-		gbc_label_1.gridy = 0;
-		pnlDetali.add(label_1, gbc_label_1);
+		lblVidNadvidId = new JLabel("\u0418\u0414 \u041D\u0430\u0434\u0432\u0438\u0434");
+		GridBagConstraints gbc_lblVidNadvidId = new GridBagConstraints();
+		gbc_lblVidNadvidId.anchor = GridBagConstraints.EAST;
+		gbc_lblVidNadvidId.insets = new Insets(0, 0, 5, 5);
+		gbc_lblVidNadvidId.gridx = 3;
+		gbc_lblVidNadvidId.gridy = 1;
+		pnlDetali.add(lblVidNadvidId, gbc_lblVidNadvidId);
+		
+		txtVidNadvidId = new JTextField();
+		GridBagConstraints gbc_txtVidNadvidId = new GridBagConstraints();
+		gbc_txtVidNadvidId.fill = GridBagConstraints.HORIZONTAL;
+		gbc_txtVidNadvidId.insets = new Insets(0, 0, 5, 0);
+		gbc_txtVidNadvidId.gridx = 4;
+		gbc_txtVidNadvidId.gridy = 1;
+		pnlDetali.add(txtVidNadvidId, gbc_txtVidNadvidId);
+		txtVidNadvidId.setColumns(10);
 		
 		lblVidLatinskoIme = new JLabel("\u041B\u0430\u0442\u0438\u043D\u0441\u043A\u043E \u0438\u043C\u0435");
 		GridBagConstraints gbc_lblVidLatinskoIme = new GridBagConstraints();
 		gbc_lblVidLatinskoIme.anchor = GridBagConstraints.EAST;
 		gbc_lblVidLatinskoIme.insets = new Insets(0, 0, 5, 5);
 		gbc_lblVidLatinskoIme.gridx = 0;
-		gbc_lblVidLatinskoIme.gridy = 1;
+		gbc_lblVidLatinskoIme.gridy = 2;
 		pnlDetali.add(lblVidLatinskoIme, gbc_lblVidLatinskoIme);
 		
 		txtVidLatinskoIme = new JTextField();
@@ -333,25 +422,16 @@ public class FrameVidovi extends JFrame {
 		gbc_txtVidLatinskoIme.insets = new Insets(0, 0, 5, 5);
 		gbc_txtVidLatinskoIme.fill = GridBagConstraints.HORIZONTAL;
 		gbc_txtVidLatinskoIme.gridx = 1;
-		gbc_txtVidLatinskoIme.gridy = 1;
+		gbc_txtVidLatinskoIme.gridy = 2;
 		pnlDetali.add(txtVidLatinskoIme, gbc_txtVidLatinskoIme);
 		txtVidLatinskoIme.setColumns(10);
-		
-		textField = new JTextField();
-		GridBagConstraints gbc_textField = new GridBagConstraints();
-		gbc_textField.fill = GridBagConstraints.HORIZONTAL;
-		gbc_textField.insets = new Insets(0, 0, 5, 5);
-		gbc_textField.gridx = 3;
-		gbc_textField.gridy = 1;
-		pnlDetali.add(textField, gbc_textField);
-		textField.setColumns(10);
 		
 		lblVidIme = new JLabel("\u0418\u043C\u0435");
 		GridBagConstraints gbc_lblVidIme = new GridBagConstraints();
 		gbc_lblVidIme.anchor = GridBagConstraints.EAST;
 		gbc_lblVidIme.insets = new Insets(0, 0, 5, 5);
 		gbc_lblVidIme.gridx = 0;
-		gbc_lblVidIme.gridy = 2;
+		gbc_lblVidIme.gridy = 3;
 		pnlDetali.add(lblVidIme, gbc_lblVidIme);
 		
 		txtVidIme = new JTextField();
@@ -359,7 +439,7 @@ public class FrameVidovi extends JFrame {
 		gbc_txtVidIme.insets = new Insets(0, 0, 5, 5);
 		gbc_txtVidIme.fill = GridBagConstraints.HORIZONTAL;
 		gbc_txtVidIme.gridx = 1;
-		gbc_txtVidIme.gridy = 2;
+		gbc_txtVidIme.gridy = 3;
 		pnlDetali.add(txtVidIme, gbc_txtVidIme);
 		txtVidIme.setColumns(10);
 		
@@ -368,7 +448,7 @@ public class FrameVidovi extends JFrame {
 		gbc_label.anchor = GridBagConstraints.EAST;
 		gbc_label.insets = new Insets(0, 0, 0, 5);
 		gbc_label.gridx = 0;
-		gbc_label.gridy = 3;
+		gbc_label.gridy = 4;
 		pnlDetali.add(label, gbc_label);
 		
 		dateChooser = new JDateChooser();
@@ -376,7 +456,7 @@ public class FrameVidovi extends JFrame {
 		gbc_dateChooser.insets = new Insets(0, 0, 0, 5);
 		gbc_dateChooser.fill = GridBagConstraints.HORIZONTAL;
 		gbc_dateChooser.gridx = 1;
-		gbc_dateChooser.gridy = 3;
+		gbc_dateChooser.gridy = 4;
 		pnlDetali.add(dateChooser, gbc_dateChooser);
 		
 		btnCloseDetails = new JButton("^ \u0417\u0430\u0442\u0432\u043E\u0440\u0438");
@@ -387,17 +467,57 @@ public class FrameVidovi extends JFrame {
 			}
 		});
 		
-		btnDetailsAccept = new JButton("\u041F\u0440\u0438\u0444\u0430\u0442\u0438");
+		btnDetailsAccept = new JButton("\u041F\u0440\u0438\u0444\u0430\u0442\u0438 \u25CF");
+		btnDetailsAccept.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if (rezimDetali == Detali.REZIM_DODAVANJE) {
+					int nadvidId = 0;
+					try {
+						if (txtVidNadvidId.getText().length() > 0) {
+							nadvidId = Integer.parseInt(txtVidNadvidId.getText());
+						}
+					} catch (NumberFormatException ex) {
+						lblStatusBar.setText("Грешка: За надвид ид внесете број или 0 односно празно ако нема надвид");
+					}
+					Vid v = new Vid(0, txtVidIme.getText(), txtVidLatinskoIme.getText(), nadvidId, dateChooser.getDate());
+					if (tableModel.addEntry(v)) {
+						txtVidId.setText(Integer.toString(v.getIdvid()));
+						txtVidNadvidId.setText(Integer.toString(v.getId_nadvid()));
+						lblStatusBar.setText("Успешен внес");
+					} else {
+						lblStatusBar.setText("Грешка: Дупликат или непостоечки надвид");
+					}
+					
+				} else if (rezimDetali == Detali.REZIM_UREDUVANJE) {
+					int id = tableModel.getData(selektiranaRedicaDetali).getIdvid();
+					int nadvidId = 0;
+					try {
+						if (txtVidNadvidId.getText().length() > 0) {
+							nadvidId = Integer.parseInt(txtVidNadvidId.getText());
+						}
+					} catch (NumberFormatException ex) {
+						lblStatusBar.setText("Грешка: За надвид ид внесете број или 0 односно празно ако нема надвид");
+					}
+					Vid v = new Vid(id, txtVidIme.getText(), txtVidLatinskoIme.getText(), nadvidId, dateChooser.getDate());
+					if (tableModel.update(selektiranaRedicaDetali, v)) {
+						lblStatusBar.setText("Успешно ажурирање");
+					} else {
+						lblStatusBar.setText("Грешка: Дупликат или непостоечки надвид");
+					}
+				}
+				
+			}
+		});
 		GridBagConstraints gbc_btnDetailsAccept = new GridBagConstraints();
 		gbc_btnDetailsAccept.insets = new Insets(0, 0, 0, 5);
 		gbc_btnDetailsAccept.gridx = 3;
-		gbc_btnDetailsAccept.gridy = 3;
+		gbc_btnDetailsAccept.gridy = 4;
 		pnlDetali.add(btnDetailsAccept, gbc_btnDetailsAccept);
 		
 		GridBagConstraints gbc_btnCloseDetails = new GridBagConstraints();
 		gbc_btnCloseDetails.anchor = GridBagConstraints.NORTH;
 		gbc_btnCloseDetails.gridx = 4;
-		gbc_btnCloseDetails.gridy = 3;
+		gbc_btnCloseDetails.gridy = 4;
 		pnlDetali.add(btnCloseDetails, gbc_btnCloseDetails);
 		
 		lblStatusBar = new JLabel("Status Bar");
@@ -414,7 +534,7 @@ public class FrameVidovi extends JFrame {
 		spinner = new JSpinner();
 		pnlStranici.add(spinner);
 		
-		btnGoto = new JButton("\u041E\u0434\u0438 \u0434\u043E \u0441\u0442\u0440\u0430\u043D\u0438\u0446\u0430");
+		btnGoto = new JButton("\u2190 \u041E\u0434\u0438 \u0434\u043E \u0441\u0442\u0440\u0430\u043D\u0438\u0446\u0430");
 		btnGoto.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
@@ -430,5 +550,15 @@ public class FrameVidovi extends JFrame {
 		lblNumPages = new JLabel("0");
 		pnlStranici.add(lblNumPages);
 		pnlStranici.add(btnGoto);
+		
+		btnRefresh = new JButton("\u041E\u0441\u0432\u0435\u0436\u0438 \u047A");
+		btnRefresh.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				tableModel.reload();
+				lblNumPages.setText(Integer.toString(tableModel.getTotalPages()));
+				spinner.setValue(tableModel.getCurrentPage());
+			}
+		});
+		pnlStranici.add(btnRefresh);
 	}
 }
