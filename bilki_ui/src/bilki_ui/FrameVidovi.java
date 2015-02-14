@@ -35,8 +35,6 @@ import java.awt.Component;
 import javax.swing.JTextField;
 
 import com.toedter.calendar.JDateChooser;
-import java.awt.Font;
-import javax.swing.UIManager;
 import javax.swing.ListSelectionModel;
 
 class VidoviTableModel extends AbstractTableModel {
